@@ -35,7 +35,7 @@ export class LotsMap implements OnChanges, OnDestroy {
   openLot = signal<Lot | null>(null);
 
   // ✅ Dejalo true mientras dibujás, después ponelo en false
-  editorMode = signal(true);
+  editorMode = signal(false);
 
   activeLotId = signal<string>('L-01');
   exportJson = signal<string>('');
