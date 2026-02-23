@@ -1,0 +1,22 @@
+<header class="nav" [class.scrolled]="scrolled()">
+    <div class="container nav__inner">
+        <a class="brand" href="#top" aria-label="Inicio">
+            <span class="brand__text">LA ALAMEDA</span>
+        </a>
+
+        <nav class="links" aria-label="Navegación">
+            <a href="#top">INICIO</a>
+            <a href="#proyecto">PROYECTO</a>
+            <a href="#amenities">AMENITIES</a>
+            <a href="#lotes">LOTES</a>
+            <a href="#galeria">GALERÍA</a>
+            <a href="#ubicacion">UBICACIÓN</a>
+            <a href="#faq">FAQ</a>
+        </nav>
+
+        <div class="nav__cta">
+            <ui-button variant="gold" size="sm" label="CONTACTAR" [href]="contactHref">
+            </ui-button>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,30 @@
+<section id="galeria" class="gallery">
+    <div class="container">
+        <div class="gallery__head">
+            <div class="gallery__kicker">GALERÍA</div>
+            <h2 class="gallery__title">Conocé La Alameda</h2>
+        </div>
+
+        <div class="gallery__frame">
+            <button class="nav prev" type="button" aria-label="Anterior" (click)="prev()">
+                ‹
+            </button>
+
+            <div class="gallery__media" role="group" aria-label="Galería de imágenes">
+                <img class="gallery__img" [src]="images[index]" alt="Imagen de la galería" loading="lazy" />
+            </div>
+
+            <button class="nav next" type="button" aria-label="Siguiente" (click)="next()">
+                ›
+            </button>
+        </div>
+
+        <div class="gallery__dots" aria-label="Indicadores">
+            @for (img of images; track trackByIndex($index)) {
+            <button type="button" class="dot" [class.on]="$index === index" (click)="goTo($index)"
+                [attr.aria-label]="'Ir a imagen ' + ($index + 1)">
+            </button>
+            }
+        </div>
+    </div>
+</section>

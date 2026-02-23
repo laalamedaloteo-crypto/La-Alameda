@@ -1,0 +1,19 @@
+<article class="card wrap" (click)="select.emit(lot)">
+    <div class="top">
+        <div>
+            <div class="code">{{ lot.code }}</div>
+            <div class="meta">
+                {{ lot.areaM2 }} m²
+                @if (lot.priceUsd) { · USD {{ lot.priceUsd | number:'1.0-0' }} }
+            </div>
+        </div>
+        <ui-badge [status]="lot.status"></ui-badge>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="bottom">
+        <div class="hint">Click para ver detalle</div>
+        <ui-button variant="gold" size="sm" label="Consultar" [href]="whatsHref"></ui-button>
+    </div>
+</article>

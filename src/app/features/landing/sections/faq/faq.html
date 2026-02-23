@@ -1,0 +1,33 @@
+<section id="faq" class="faq">
+    <div class="container">
+        <div class="faq__head">
+            <div class="faq__kicker">PREGUNTAS FRECUENTES</div>
+            <h2 class="faq__title">Resolv&eacute; tus dudas</h2>
+        </div>
+
+        <div class="faq__list" role="list">
+            @for (f of faqs; track f.q) {
+            <article class="faq__item" role="listitem">
+                <button type="button" class="faq__q" [attr.aria-expanded]="openIndex === $index"
+                    (click)="toggle($index)">
+                    <span>{{ f.q }}</span>
+
+                    <span class="chev" [class.open]="openIndex === $index" aria-hidden="true">
+                        <!-- chevron -->
+                        <svg viewBox="0 0 24 24" class="chevIcon" fill="none">
+                            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </button>
+
+                @if (openIndex === $index) {
+                <div class="faq__a">
+                    {{ f.a }}
+                </div>
+                }
+            </article>
+            }
+        </div>
+    </div>
+</section>

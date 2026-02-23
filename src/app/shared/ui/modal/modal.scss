@@ -1,0 +1,38 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(0, 0, 0, 0.66);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+}
+
+.modal {
+    width: min(720px, 100%);
+    padding: 18px;
+    border-radius: var(--radius2);
+    position: relative;
+    border: 1px solid rgba(200, 180, 138, 0.22);
+    background: linear-gradient(180deg, rgba(15, 15, 18, 0.92), rgba(10, 10, 12, 0.82));
+}
+
+.x {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    height: 34px;
+    width: 34px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.x:hover {
+    border-color: rgba(200, 180, 138, 0.35);
+}

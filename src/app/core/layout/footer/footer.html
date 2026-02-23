@@ -1,0 +1,40 @@
+<footer class="footer">
+    <div class="container footer__grid">
+        <!-- Brand -->
+        <div class="col">
+            <div class="brand">{{ brand }}</div>
+            <p class="desc">
+                Viví rodeado de naturaleza, con la tranquilidad y el estilo de vida que tu familia merece.
+            </p>
+        </div>
+
+        <!-- Contacto -->
+        <div class="col">
+            <div class="title">CONTACTO</div>
+
+            <a class="link" [href]="'tel:' + phoneDisplay.replace(/\\s|-/g,'')">
+                {{ phoneDisplay }}
+            </a>
+
+            <a class="link" [href]="'mailto:' + email">
+                {{ email }}
+            </a>
+
+            <div class="muted">{{ address }}</div>
+        </div>
+
+        <!-- Legal -->
+        <div class="col">
+            <div class="title">LEGAL</div>
+
+            <a class="link" href="#" (click)="$event.preventDefault()">Términos y condiciones</a>
+            <a class="link" href="#" (click)="$event.preventDefault()">Política de privacidad</a>
+        </div>
+    </div>
+
+    <div class="footer__rule"></div>
+
+    <div class="footer__bottom">
+        © {{ year }} {{ brand }}. Todos los derechos reservados.
+    </div>
+</footer>

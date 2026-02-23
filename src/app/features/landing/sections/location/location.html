@@ -1,0 +1,54 @@
+<section id="ubicacion" class="location">
+    <div class="container">
+        <div class="location__head">
+            <div class="location__kicker">UBICACIÓN</div>
+            <h2 class="location__title">Conectado con todo</h2>
+        </div>
+
+        <div class="location__grid">
+            <!-- MAP -->
+            <div class="location__mapCard">
+                <iframe class="location__map" [src]="mapSrc" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    title="Mapa de ubicación"></iframe>
+            </div>
+
+            <!-- INFO -->
+            <div class="location__info">
+                @for (it of items; track it.text) {
+                <div class="location__item">
+                    <div class="location__iconBox" aria-hidden="true">
+                        @if (it.icon === 'car') {
+                        <!-- car -->
+                        <svg viewBox="0 0 24 24" class="icon" fill="none">
+                            <path d="M6 16l-1-4 2-6h10l2 6-1 4H6Z" stroke="currentColor" stroke-width="1.6"
+                                stroke-linejoin="round" />
+                            <path d="M7 16v2M17 16v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                            <path d="M7 12h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                        </svg>
+                        }
+                        @if (it.icon === 'clock') {
+                        <!-- clock -->
+                        <svg viewBox="0 0 24 24" class="icon" fill="none">
+                            <path d="M12 22a10 10 0 1 0-10-10 10 10 0 0 0 10 10Z" stroke="currentColor"
+                                stroke-width="1.6" />
+                            <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        }
+                        @if (it.icon === 'pin') {
+                        <!-- pin -->
+                        <svg viewBox="0 0 24 24" class="icon" fill="none">
+                            <path d="M12 22s7-5.2 7-12a7 7 0 1 0-14 0c0 6.8 7 12 7 12Z" stroke="currentColor"
+                                stroke-width="1.6" stroke-linejoin="round" />
+                            <path d="M12 10.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" stroke="currentColor" stroke-width="1.6" />
+                        </svg>
+                        }
+                    </div>
+
+                    <div class="location__text">{{ it.text }}</div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

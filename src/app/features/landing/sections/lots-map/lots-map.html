@@ -1,0 +1,62 @@
+@if (editorMode()) {
+<div class="editor">
+    <div class="editor-row">
+        <label>Lote:</label>
+
+        <select [value]="activeLotId()" (change)="setActiveLot(($any($event.target).value))">
+            @for (l of lots; track l.id) {
+            <option [value]="l.id">{{ l.code }}</option>
+            }
+        </select>
+
+        <ui-button variant="outline" label="Borrar polígono" (click)="clearActivePolygon()"></ui-button>
+        <ui-button variant="gold" label="Exportar JSON" (click)="exportAll()"></ui-button>
+    </div>
+
+    <div class="editor-hint">
+        Tip: seleccioná un lote (L-01…L-23), usá la herramienta de polígono del mapa (izquierda),
+        clickeá vértices y doble click para terminar. Luego “Exportar JSON”.
+    </div>
+
+    @if (exportJson()) {
+    <textarea class="exportBox" readonly [value]="exportJson()"></textarea>
+    <div class="editor-hint">
+        Se copió al portapapeles (si el navegador lo permite) y también quedó en consola.
+    </div>
+    }
+</div>
+}
+
+<div class="map card">
+    <div class="legend">
+        <span class="lg available">Disponible</span>
+        <span class="lg reserved">Reservado</span>
+        <span class="lg sold">Vendido</span>
+    </div>
+
+    <div class="leaflet" leaflet [leafletOptions]="options" (leafletMapReady)="onMapReady($event)"></div>
+</div>
+
+<ui-modal [open]="!!openLot()" (close)="openLot.set(null)">
+    @if (openLot(); as lot) {
+    <div class="modal-head">
+        <div>
+            <div class="kicker">Detalle</div>
+            <h3>{{ lot.code }}</h3>
+            <div class="meta">
+                {{ lot.areaM2 }} m²
+                @if (lot.priceUsd) { · US$ {{ lot.priceUsd | number:'1.0-0' }} }
+            </div>
+        </div>
+
+        <ui-badge [status]="lot.status"></ui-badge>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="modal-actions">
+        <ui-button variant="gold" label="Consultar por WhatsApp" [href]="whatsLot(lot)"></ui-button>
+        <ui-button variant="outline" label="Cerrar" (click)="openLot.set(null)" target="_self"></ui-button>
+    </div>
+    }
+</ui-modal>

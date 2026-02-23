@@ -1,0 +1,90 @@
+@import "leaflet/dist/leaflet.css";
+
+:root {
+    --bg: #07070A;
+    --bg2: #0B0B0C;
+    --card: rgba(255, 255, 255, 0.06);
+    --card2: rgba(255, 255, 255, 0.08);
+    --stroke: rgba(200, 180, 138, 0.22);
+    --text: #F4F1EA;
+    --muted: rgba(244, 241, 234, 0.72);
+    --gold: #C8B48A;
+    --gold2: #D4AF37;
+    --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    --radius: 18px;
+    --radius2: 26px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    background:
+        radial-gradient(1200px 700px at 20% -10%, rgba(200, 180, 138, 0.18), transparent 65%),
+        radial-gradient(900px 600px at 85% 10%, rgba(200, 180, 138, 0.12), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Playfair Display", serif;
+    letter-spacing: 0.2px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+.section {
+    padding: 84px 0;
+}
+
+.card {
+    background: linear-gradient(180deg, var(--card), rgba(255, 255, 255, 0.03));
+    border: 1px solid rgba(200, 180, 138, 0.18);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+}
+
+.kicker {
+    color: rgba(200, 180, 138, 0.95);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+.hr {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(200, 180, 138, 0.35), transparent);
+    margin: 24px 0;
+}
+
+.grid {
+    display: grid;
+    gap: 18px;
+}
+
+@media (max-width: 680px) {
+    .section {
+        padding: 60px 0;
+    }
+}

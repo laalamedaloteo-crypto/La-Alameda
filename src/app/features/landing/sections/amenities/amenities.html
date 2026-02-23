@@ -1,0 +1,64 @@
+<section id="amenities" class="amenities" [style.--bg]=" 'url(' + bgUrl + ')' ">
+    <div class="amenities__bg" aria-hidden="true"></div>
+    <div class="amenities__shade" aria-hidden="true"></div>
+
+    <div class="container amenities__content">
+        <div class="amenities__head">
+            <div class="amenities__kicker">AMENITIES</div>
+            <h2 class="amenities__title">Todo lo que necesitás</h2>
+        </div>
+
+        <div class="amenities__row" role="list">
+            @for (it of items; track it.id) {
+            <div class="amenities__chip" role="listitem">
+                <span class="amenities__iconBox" aria-hidden="true">
+                    @if (it.id === 'access') {
+                    <!-- Door -->
+                    <svg viewBox="0 0 24 24" class="icon" fill="none">
+                        <path d="M8 3h8v18H8V3Z" stroke="currentColor" stroke-width="1.6" />
+                        <path d="M12 12h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                    </svg>
+                    }
+                    @if (it.id === 'security') {
+                    <!-- Shield -->
+                    <svg viewBox="0 0 24 24" class="icon" fill="none">
+                        <path d="M12 3l7 4v6c0 5-3.5 8.5-7 9-3.5-.5-7-4-7-9V7l7-4Z" stroke="currentColor"
+                            stroke-width="1.6" stroke-linejoin="round" />
+                    </svg>
+                    }
+                    @if (it.id === 'lights') {
+                    <!-- Lamp -->
+                    <svg viewBox="0 0 24 24" class="icon" fill="none">
+                        <path d="M9 10a3 3 0 1 1 6 0c0 1.2-.7 2.3-1.7 2.8V15H10.7v-2.2C9.7 12.3 9 11.2 9 10Z"
+                            stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+                        <path d="M10 18h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                    </svg>
+                    }
+                    @if (it.id === 'fiber') {
+                    <!-- Wifi -->
+                    <svg viewBox="0 0 24 24" class="icon" fill="none">
+                        <path d="M5 9a11 11 0 0 1 14 0" stroke="currentColor" stroke-width="1.6"
+                            stroke-linecap="round" />
+                        <path d="M8 12a7 7 0 0 1 8 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                        <path d="M11 15a3 3 0 0 1 2 0" stroke="currentColor" stroke-width="1.6"
+                            stroke-linecap="round" />
+                        <path d="M12 18h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                    </svg>
+                    }
+                    @if (it.id === 'parks') {
+                    <!-- Tree -->
+                    <svg viewBox="0 0 24 24" class="icon" fill="none">
+                        <path d="M12 3c2.5 0 4.5 2 4.5 4.5S14.5 12 12 12 7.5 10 7.5 7.5 9.5 3 12 3Z"
+                            stroke="currentColor" stroke-width="1.6" />
+                        <path d="M12 12v9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                        <path d="M9 21h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                    </svg>
+                    }
+                </span>
+
+                <span class="amenities__label">{{ it.label }}</span>
+            </div>
+            }
+        </div>
+    </div>
+</section>

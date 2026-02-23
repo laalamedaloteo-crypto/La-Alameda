@@ -1,0 +1,130 @@
+.amenities {
+    position: relative;
+    padding: 120px 0 92px;
+    overflow: hidden;
+    border-top: 1px solid rgba(200, 180, 138, 0.10);
+    border-bottom: 1px solid rgba(200, 180, 138, 0.12);
+    isolation: isolate;
+}
+
+/* Fondo: lo tomamos de la variable CSS --bg (seteada desde TS) */
+.amenities__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: var(--bg) center/cover no-repeat;
+    filter: saturate(1.03) contrast(1.03);
+    transform: scale(1.02);
+}
+
+/* Sombra/overlay para legibilidad similar a la referencia */
+.amenities__shade {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        radial-gradient(900px 520px at 50% 35%, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.20) 60%, rgba(0, 0, 0, 0.55)),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65));
+}
+
+.amenities__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.amenities__kicker {
+    color: rgba(200, 180, 138, 0.92);
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.amenities__title {
+    margin: 0 0 26px;
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    font-size: clamp(34px, 4vw, 54px);
+    color: rgba(244, 241, 234, 0.96);
+    text-shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
+}
+
+/* Fila de chips */
+.amenities__row {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 14px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 18px;
+}
+
+/* Chip como la referencia (recto, borde fino, fondo transparente) */
+.amenities__chip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    height: 58px;
+    padding: 0 16px;
+
+    border: 1px solid rgba(244, 241, 234, 0.10);
+    background: rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(10px);
+
+    transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.amenities__chip:hover {
+    transform: translateY(-1px);
+    background: rgba(0, 0, 0, 0.26);
+    border-color: rgba(200, 180, 138, 0.25);
+}
+
+.amenities__iconBox {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    color: rgba(200, 180, 138, 0.95);
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+}
+
+.amenities__label {
+    color: rgba(244, 241, 234, 0.82);
+    font-size: 13px;
+    letter-spacing: 0.4px;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .amenities__row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 680px) {
+    .amenities {
+        padding: 96px 0 76px;
+    }
+
+    .amenities__row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .amenities__chip {
+        height: 56px;
+    }
+}
+
+@media (max-width: 420px) {
+    .amenities__row {
+        grid-template-columns: 1fr;
+    }
+}

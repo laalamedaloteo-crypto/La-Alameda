@@ -1,0 +1,12 @@
+@if (href) {
+<a class="btn" [class.gold]="variant === 'gold'" [class.outline]="variant === 'outline'"
+    [class.ghost]="variant === 'ghost'" [class.sm]="size === 'sm'" [attr.href]="href" [attr.target]="target"
+    [attr.rel]="rel">
+    {{ label }}
+</a>
+} @else {
+<button type="button" class="btn" [class.gold]="variant === 'gold'" [class.outline]="variant === 'outline'"
+    [class.ghost]="variant === 'ghost'" [class.sm]="size === 'sm'">
+    {{ label }}
+</button>
+}

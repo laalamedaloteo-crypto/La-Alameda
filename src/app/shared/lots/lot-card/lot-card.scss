@@ -1,0 +1,40 @@
+.wrap {
+    padding: 16px;
+    border-radius: var(--radius2);
+    cursor: pointer;
+}
+
+.wrap:hover {
+    border-color: rgba(200, 180, 138, 0.35);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.code {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+}
+
+.meta {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.hint {
+    color: rgba(244, 241, 234, 0.62);
+    font-size: 12px;
+}

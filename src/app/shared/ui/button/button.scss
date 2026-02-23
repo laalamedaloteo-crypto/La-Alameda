@@ -1,0 +1,64 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 48px;
+    padding: 0 26px;
+
+    border-radius: 0;
+    /* 👈 recto como la referencia */
+    border: 1px solid rgba(200, 180, 138, 0.55);
+
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    background: rgba(0, 0, 0, 0.18);
+    color: rgba(244, 241, 234, 0.90);
+
+    transition: transform .15s ease, background .15s ease, border-color .15s ease, color .15s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    background: rgba(0, 0, 0, 0.26);
+    border-color: rgba(200, 180, 138, 0.75);
+}
+
+/* Dorado sólido */
+.gold {
+    background: rgba(200, 180, 138, 0.95);
+    color: rgba(10, 10, 12, 0.95);
+    border-color: rgba(200, 180, 138, 0.95);
+}
+
+.gold:hover {
+    background: rgba(212, 175, 55, 0.95);
+    border-color: rgba(212, 175, 55, 0.95);
+}
+
+/* Outline (se ve igual al “VER LOTES” del ejemplo) */
+.outline {
+    background: rgba(0, 0, 0, 0.18);
+    color: rgba(200, 180, 138, 0.95);
+    border-color: rgba(200, 180, 138, 0.55);
+}
+
+.outline:hover {
+    background: rgba(0, 0, 0, 0.28);
+    border-color: rgba(200, 180, 138, 0.80);
+}
+
+.ghost {
+    background: transparent;
+    border-color: rgba(244, 241, 234, 0.16);
+    color: rgba(244, 241, 234, 0.80);
+}
+
+.sm {
+    height: 44px;
+    padding: 0 22px;
+    font-size: 12px;
+}

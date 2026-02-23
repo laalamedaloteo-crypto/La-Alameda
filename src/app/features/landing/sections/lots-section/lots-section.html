@@ -1,0 +1,47 @@
+<section id="lotes" class="lots">
+    <div class="container">
+        <div class="lots__head">
+            <div class="lots__kicker">LOTES DISPONIBLES</div>
+            <h2 class="lots__title">Elegí tu lote ideal</h2>
+
+            <div class="lots__tabs">
+                <button class="tab" [class.on]="tab() === 'list'" (click)="setTab('list')">LISTADO</button>
+                <button class="tab" [class.on]="tab() === 'map'" (click)="setTab('map')">MAPA</button>
+            </div>
+        </div>
+
+        <div class="lots__toolbar">
+            <div class="filters">
+                <button class="chip" [class.on]="filter() === 'ALL'" (click)="setFilter('ALL')">TODOS</button>
+                <button class="chip" [class.on]="filter() === 'AVAILABLE'"
+                    (click)="setFilter('AVAILABLE')">DISPONIBLES</button>
+                <button class="chip" [class.on]="filter() === 'RESERVED'"
+                    (click)="setFilter('RESERVED')">RESERVADOS</button>
+                <button class="chip" [class.on]="filter() === 'SOLD'" (click)="setFilter('SOLD')">VENDIDOS</button>
+            </div>
+
+            <div class="search">
+                <input type="text" placeholder="Buscar lote (ej: L-01, L-02)" [value]="query()"
+                    (input)="query.set(($any($event.target).value || ''))" />
+            </div>
+        </div>
+
+        <!-- ✅ GRID siempre montado (solo se oculta) -->
+        <div [class.is-hidden]="tab() !== 'list'">
+            <landing-lots-grid [lots]="pagedLots()" [selected]="selected()" (selectLot)="onSelect($event)">
+            </landing-lots-grid>
+
+            @if (hasMore()) {
+            <div class="more">
+                <button class="moreBtn" (click)="loadMore()">CARGAR MÁS</button>
+            </div>
+            }
+        </div>
+
+        <!-- ✅ MAPA solo cuando corresponde -->
+        @if (tab() === 'map') {
+        <landing-lots-map [lots]="filteredLots()" [selected]="selected()" (selectLot)="selected.set($event)">
+        </landing-lots-map>
+        }
+    </div>
+</section>
