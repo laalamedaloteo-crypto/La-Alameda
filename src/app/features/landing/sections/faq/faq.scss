@@ -89,12 +89,18 @@
 }
 
 /* Respuesta */
+/* Respuesta */
 .faq__a {
-    padding: 0 18px 18px;
+    padding: 14px 18px 18px;
+    /* ✅ antes: 0 18px 18px */
     color: rgba(244, 241, 234, 0.65);
     font-size: 13.5px;
     line-height: 1.7;
+
     border-top: 1px solid rgba(244, 241, 234, 0.08);
+
+    /* opcional: que el texto no empiece justo pegado a la línea */
+    margin-top: 0;
 }
 
 @media (max-width: 520px) {
