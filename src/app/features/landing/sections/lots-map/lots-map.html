@@ -37,7 +37,7 @@
     <div class="leaflet" leaflet [leafletOptions]="options" (leafletMapReady)="onMapReady($event)"></div>
 </div>
 
-<ui-modal [open]="!!openLot()" (close)="openLot.set(null)">
+<ui-modal [open]="!!openLot()" [showCloseIcon]="false" (close)="openLot.set(null)">
     @if (openLot(); as lot) {
     <div class="modal-head">
         <div>

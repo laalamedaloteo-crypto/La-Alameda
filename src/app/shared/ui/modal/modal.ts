@@ -2,11 +2,15 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'ui-modal',
-  imports: [],
+  standalone: true,
   templateUrl: './modal.html',
   styleUrl: './modal.scss',
 })
 export class UiModal {
-  @Input({ required: true }) open!: boolean;
+  @Input() open = false;
+
+  // ✅ nuevo
+  @Input() showCloseIcon = true;
+
   @Output() close = new EventEmitter<void>();
 }

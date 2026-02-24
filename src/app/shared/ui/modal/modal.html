@@ -1,8 +1,11 @@
 @if (open) {
-<div class="overlay" (click)="close.emit()">
-    <div class="modal card" (click)="$event.stopPropagation()">
-        <button class="x" (click)="close.emit()">×</button>
-        <ng-content></ng-content>
-    </div>
+<div class="backdrop" (click)="close.emit()"></div>
+
+<div class="panel" role="dialog" aria-modal="true">
+    @if (showCloseIcon) {
+    <button class="x" type="button" aria-label="Cerrar" (click)="close.emit()">×</button>
+    }
+
+    <ng-content></ng-content>
 </div>
 }

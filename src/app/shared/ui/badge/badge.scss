@@ -1,25 +1,44 @@
-.badge {
+:host.badge {
     display: inline-flex;
     align-items: center;
+    gap: 8px;
+
     padding: 6px 10px;
     border-radius: 999px;
-    font-size: 12px;
-    letter-spacing: 0.7px;
-    border: 1px solid rgba(200, 180, 138, 0.18);
-    background: rgba(255, 255, 255, 0.04);
-    color: var(--text);
+    border: 1px solid rgba(244, 241, 234, 0.14);
+    background: rgba(0, 0, 0, 0.22);
+
+    color: rgba(244, 241, 234, 0.86);
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
 }
 
-.av {
-    border-color: rgba(200, 180, 138, 0.45);
+.dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.9;
 }
 
-.rs {
-    border-color: rgba(244, 241, 234, 0.35);
+/* ✅ suaves pero claros */
+:host.status-available {
+    border-color: rgba(46, 204, 113, 0.35);
+    background: rgba(46, 204, 113, 0.10);
+    color: rgba(210, 245, 225, 0.95);
+}
+
+:host.status-reserved {
+    border-color: rgba(241, 196, 15, 0.38);
+    background: rgba(241, 196, 15, 0.10);
+    color: rgba(255, 245, 215, 0.95);
+}
+
+:host.status-sold {
+    border-color: rgba(231, 76, 60, 0.32);
+    background: rgba(231, 76, 60, 0.08);
+    color: rgba(255, 226, 220, 0.92);
     opacity: 0.92;
-}
-
-.sd {
-    border-color: rgba(255, 255, 255, 0.14);
-    opacity: 0.7;
 }
