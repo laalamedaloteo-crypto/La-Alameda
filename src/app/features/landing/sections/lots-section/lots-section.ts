@@ -1,4 +1,6 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, signal, DestroyRef, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { timer, switchMap } from 'rxjs';
 import { LotsApiService, Lot, LotStatus } from '../../../../core/services/lots-api';
 
 import { LotsGrid } from '../lots-grid/lots-grid';
@@ -33,7 +35,7 @@ export class LotsSection {
         if (f !== 'ALL') arr = arr.filter((l) => l.status === f);
         if (q) arr = arr.filter((l) => l.code.toLowerCase().includes(q));
 
-        return arr;
+        return [...arr].sort((a, b) => a.id.localeCompare(b.id));
     });
 
     pagedLots = computed(() => {
@@ -44,7 +46,15 @@ export class LotsSection {
     hasMore = computed(() => this.pagedLots().length < this.filteredLots().length);
 
     constructor(private api: LotsApiService) {
-        this.api.listLots().subscribe((l) => this.lots.set(l));
+        const destroyRef = inject(DestroyRef);
+
+        timer(0, 15000).pipe(
+            switchMap(() => this.api.listLots()),
+            takeUntilDestroyed(destroyRef)
+        ).subscribe((l) => {
+            console.log('Real-time update: Lots fetched');
+            this.lots.set(l);
+        });
     }
 
     setFilter(f: Filter) {

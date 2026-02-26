@@ -10,30 +10,8 @@
 
     <div #track class="track">
         @for (lot of lots; track lot.id) {
-        <article class="card" [class.active]="selected?.id === lot.id" (click)="onClick(lot)">
-            <div class="top">
-                <div class="code">{{ lot.code }}</div>
-                <ui-badge [status]="lot.status"></ui-badge>
-            </div>
-
-            <div class="row">
-                <div class="kv">
-                    <div class="k">SUPERFICIE</div>
-                    <div class="v">{{ lot.areaM2 }} m²</div>
-                </div>
-
-                <div class="kv">
-                    <div class="k">PRECIO</div>
-                    <div class="v gold">
-                        @if (lot.priceUsd) { US$ {{ lot.priceUsd | number:'1.0-0' }} } @else { Consultar }
-                    </div>
-                </div>
-            </div>
-
-            <div class="cta">
-                <ui-button variant="outline" label="Ver en mapa" target="_self"></ui-button>
-            </div>
-        </article>
+        <lot-card [lot]="lot" [active]="selected?.id === lot.id" (select)="onClick($event)">
+        </lot-card>
         }
     </div>
 </div>

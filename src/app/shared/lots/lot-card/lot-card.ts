@@ -13,6 +13,7 @@ import { UiButton } from '../../ui/button/button';
 })
 export class LotCard {
   @Input({ required: true }) lot!: Lot;
+  @Input() active = false;
   @Output() select = new EventEmitter<Lot>();
 
   private phone = '5493446000000';
@@ -21,5 +22,9 @@ export class LotCard {
     return `https://wa.me/${this.phone}?text=${encodeURIComponent(
       `Hola! Quiero info de ${this.lot.code} (${this.lot.areaM2}m²).`
     )}`;
+  }
+
+  onClick() {
+    this.select.emit(this.lot);
   }
 }

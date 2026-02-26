@@ -1,19 +1,30 @@
-<article class="card wrap" (click)="select.emit(lot)">
+<article class="card" [class.active]="active" (click)="onClick()">
     <div class="top">
-        <div>
-            <div class="code">{{ lot.code }}</div>
-            <div class="meta">
-                {{ lot.areaM2 }} m²
-                @if (lot.priceUsd) { · USD {{ lot.priceUsd | number:'1.0-0' }} }
-            </div>
-        </div>
+        <div class="code">{{ lot.code }}</div>
         <ui-badge [status]="lot.status"></ui-badge>
     </div>
 
-    <div class="hr"></div>
+    <div class="row">
+        <div class="kv">
+            <div class="k">SUPERFICIE</div>
+            <div class="v">{{ lot.areaM2 }} m²</div>
+        </div>
 
-    <div class="bottom">
-        <div class="hint">Click para ver detalle</div>
-        <ui-button variant="gold" size="sm" label="Consultar" [href]="whatsHref"></ui-button>
+        <div class="kv">
+            <div class="k">PRECIO</div>
+            <div class="v gold">
+                @if (lot.priceUsd) { US$ {{ lot.priceUsd | number:'1.0-0' }} } @else { Consultar }
+            </div>
+        </div>
+    </div>
+
+    @if (lot.description) {
+    <div class="description">
+        {{ lot.description }}
+    </div>
+    }
+
+    <div class="cta">
+        <ui-button variant="outline" label="Ver en mapa" target="_self"></ui-button>
     </div>
 </article>

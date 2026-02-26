@@ -10,12 +10,13 @@ export interface Lot {
   areaM2: number;
   priceUsd?: number;
   status: LotStatus;
+  description?: string;
   polygon?: Array<[number, number]>;
 }
 
 @Injectable({ providedIn: 'root' })
 export class LotsApiService {
-  private readonly apiUrl = '/api/lots';
+  private readonly apiUrl = 'http://localhost:3000/api/lots';
   private readonly assetsUrl = '/assets/data/lots.json';
 
   constructor(private http: HttpClient) { }

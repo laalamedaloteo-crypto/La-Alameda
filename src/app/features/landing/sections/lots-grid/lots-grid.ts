@@ -1,13 +1,13 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
 import { Lot } from '../../../../core/services/lots-api';
-import { UiBadge } from '../../../../shared/ui/badge/badge';
+import { LotCard } from '../../../../shared/lots/lot-card/lot-card';
 import { UiButton } from '../../../../shared/ui/button/button';
 
 @Component({
   selector: 'landing-lots-grid',
   standalone: true,
-  imports: [DecimalPipe, UiBadge, UiButton],
+  imports: [DecimalPipe, LotCard, UiButton],
   templateUrl: './lots-grid.html',
   styleUrl: './lots-grid.scss',
 })

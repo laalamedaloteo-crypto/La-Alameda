@@ -52,6 +52,12 @@
         <ui-badge [status]="lot.status"></ui-badge>
     </div>
 
+    @if (lot.description) {
+    <p class="modal-description">
+        {{ lot.description }}
+    </p>
+    }
+
     <div class="hr"></div>
 
     <div class="modal-actions">
