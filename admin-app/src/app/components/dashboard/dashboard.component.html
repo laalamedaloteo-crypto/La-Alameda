@@ -1,0 +1,123 @@
+<div class="page">
+    <!-- Topbar -->
+    <header class="topbar">
+        <div class="brand">
+            <div class="logo">R</div>
+            <div class="brand-text">
+                <h1>Panel de Control</h1>
+                <p>RealEstate Admin</p>
+            </div>
+        </div>
+
+        <div class="spacer"></div>
+
+        <div class="search">
+            <span class="ico">⌕</span>
+            <input type="text" [(ngModel)]="searchTerm" placeholder="Buscar por código o descripción…" />
+            <button *ngIf="searchTerm" type="button" class="clear" (click)="searchTerm=''">✕</button>
+        </div>
+
+        <button (click)="logout()" class="logout">Salir</button>
+    </header>
+
+    <main class="content">
+        <!-- Loading -->
+        <div *ngIf="loading" class="state">Cargando lotes…</div>
+
+        <!-- Error -->
+        <div *ngIf="!loading && error" class="state">
+            <div class="state-card">
+                <p class="state-title">Ocurrió un error</p>
+                <p class="state-text">{{ error }}</p>
+                <button class="btn btn-primary" type="button" (click)="reload()">Reintentar</button>
+            </div>
+        </div>
+
+        <ng-container *ngIf="!loading && !error">
+            <!-- KPIs -->
+            <section class="kpis">
+                <div class="kpi">
+                    <span class="kpi-label">Total</span>
+                    <div class="kpi-value">{{ lots.length }}</div>
+                    <p class="kpi-sub">Inventario cargado</p>
+                </div>
+
+                <div class="kpi">
+                    <span class="kpi-label">Disponibles</span>
+                    <div class="kpi-value kpi-ok">{{ statusCounts.available }}</div>
+                    <p class="kpi-sub">Listos para vender</p>
+                </div>
+
+                <div class="kpi">
+                    <span class="kpi-label">Reservados</span>
+                    <div class="kpi-value kpi-warn">{{ statusCounts.reserved }}</div>
+                    <p class="kpi-sub">En negociación</p>
+                </div>
+
+                <div class="kpi">
+                    <span class="kpi-label">Vendidos</span>
+                    <div class="kpi-value kpi-bad">{{ statusCounts.sold }}</div>
+                    <p class="kpi-sub">Cerrados</p>
+                </div>
+            </section>
+
+            <!-- Filters -->
+            <section class="filters">
+                <div class="chips">
+                    <button *ngFor="let f of filters" type="button" class="chip" [class.active]="statusFilter === f.key"
+                        (click)="setStatusFilter(f.key)">
+                        {{ f.label }}
+                    </button>
+                </div>
+
+                <span class="results">{{ filteredLots.length }} resultados</span>
+            </section>
+
+            <!-- Empty -->
+            <section *ngIf="filteredLots.length === 0" class="state">
+                <div class="state-card">
+                    <p class="state-title">No hay resultados</p>
+                    <p class="state-text">Probá otra búsqueda o cambiá el filtro.</p>
+                    <button type="button" class="link" (click)="clearFilters()">Limpiar filtros</button>
+                </div>
+            </section>
+
+            <!-- Grid -->
+            <section *ngIf="filteredLots.length > 0" class="grid">
+                <article *ngFor="let lot of filteredLots; trackBy: trackById" class="card"
+                    [routerLink]="['/lot', lot.id]">
+                    <div class="card-head">
+                        <div>
+                            <p class="mini">LOTE</p>
+                            <p class="code">{{ lot.code }}</p>
+                        </div>
+
+                        <span class="badge" [ngClass]="getStatusClass(lot.status)">
+                            {{ getStatusLabel(lot.status) }}
+                        </span>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row">
+                            <span class="label">Superficie</span>
+                            <span class="value">{{ lot.areaM2 }} m²</span>
+                        </div>
+                        <div class="row">
+                            <span class="label">Precio</span>
+                            <span class="value">{{ lot.priceUsd | currency:'USD':'symbol':'1.0-0' }}</span>
+                        </div>
+
+                        <p *ngIf="lot.description" class="desc">
+                            {{ lot.description }}
+                        </p>
+                    </div>
+
+                    <button class="edit" type="button" (click)="$event.stopPropagation()"
+                        [routerLink]="['/lot', lot.id]">
+                        Editar detalles
+                    </button>
+                </article>
+            </section>
+        </ng-container>
+    </main>
+</div>

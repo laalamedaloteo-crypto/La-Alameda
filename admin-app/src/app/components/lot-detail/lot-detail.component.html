@@ -1,0 +1,80 @@
+<div class="page">
+    <header class="header">
+        <div class="header-inner">
+            <button routerLink="/dashboard" class="back">← Volver</button>
+
+            <div class="title" *ngIf="lot">
+                <h1>Editar {{ lot.code }}</h1>
+                <p>Actualizá precio, estado, superficie y descripción</p>
+            </div>
+
+            <span *ngIf="lot" class="badge" [ngClass]="getStatusClass(lot.status)">
+                {{ getStatusLabel(lot.status) }}
+            </span>
+        </div>
+    </header>
+
+    <main class="content">
+        <div *ngIf="loading" class="state">Cargando…</div>
+
+        <div *ngIf="!loading && error" class="state">
+            <div class="state-card">
+                <p class="state-title">Error</p>
+                <p class="state-text">{{ error }}</p>
+                <button class="btn btn-primary" type="button" (click)="retry()">Reintentar</button>
+            </div>
+        </div>
+
+        <div *ngIf="!loading && lot && !error" class="card">
+            <form (ngSubmit)="onSubmit()" class="form">
+                <div class="grid">
+                    <div class="field">
+                        <label>ID (solo lectura)</label>
+                        <input [value]="lot.id" disabled />
+                    </div>
+
+                    <div class="field">
+                        <label>Código (solo lectura)</label>
+                        <input [value]="lot.code" disabled />
+                    </div>
+
+                    <div class="field">
+                        <label>Precio (USD)</label>
+                        <input type="number" [(ngModel)]="lot.priceUsd" name="priceUsd" required />
+                    </div>
+
+                    <div class="field">
+                        <label>Superficie (m²)</label>
+                        <input type="number" [(ngModel)]="lot.areaM2" name="areaM2" required />
+                    </div>
+
+                    <div class="field">
+                        <label>Estado</label>
+                        <select [(ngModel)]="lot.status" name="status" required>
+                            <option value="AVAILABLE">Disponible</option>
+                            <option value="RESERVED">Reservado</option>
+                            <option value="SOLD">Vendido</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>Descripción</label>
+                    <textarea [(ngModel)]="lot.description" name="description" rows="4"
+                        placeholder="Agregá una descripción detallada…"></textarea>
+                </div>
+
+                <div class="actions">
+                    <button type="submit" [disabled]="saving" class="btn btn-primary">
+                        {{ saving ? 'Guardando…' : 'Guardar cambios' }}
+                    </button>
+                    <span class="hint">Los cambios se guardan en la base de datos.</span>
+                </div>
+            </form>
+        </div>
+
+        <div *ngIf="success" class="toast">
+            ✅ Cambios guardados con éxito
+        </div>
+    </main>
+</div>
