@@ -13,7 +13,7 @@ async function seed() {
         await User.create({
             name: 'Admin',
             email: 'admin@example.com',
-            password: 'adminpassword123' // This will be hashed via model hooks
+            password: 'admin123' // This will be hashed via model hooks
         });
         console.log('Admin user created');
 
