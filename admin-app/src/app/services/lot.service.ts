@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface Lot {
     id: string;
@@ -17,7 +17,7 @@ export interface Lot {
 })
 export class LotService {
     private http = inject(HttpClient);
-    private readonly apiUrl = 'http://localhost:3000/api/lots';
+    private readonly apiUrl = `${environment.apiUrl}/lots`;
 
     private getHeaders() {
         const token = localStorage.getItem('admin_token');

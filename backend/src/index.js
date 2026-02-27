@@ -10,8 +10,18 @@ const lotsRoutes = require('./routes/lots.routes');
 const app = express();
 
 // Middleware
+const allowedOrigins = process.env.ALLOWED_ORIGINS
+    ? process.env.ALLOWED_ORIGINS.split(',')
+    : ['http://localhost:4200', 'http://localhost:4201'];
+
 app.use(cors({
-    origin: ['http://localhost:4200', 'http://localhost:4201'],
+    origin: (origin, callback) => {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));

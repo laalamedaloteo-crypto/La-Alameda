@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, catchError, of } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 export type LotStatus = 'AVAILABLE' | 'RESERVED' | 'SOLD';
 
@@ -16,7 +16,7 @@ export interface Lot {
 
 @Injectable({ providedIn: 'root' })
 export class LotsApiService {
-  private readonly apiUrl = 'http://localhost:3000/api/lots';
+  private readonly apiUrl = `${environment.apiUrl}/lots`;
   private readonly assetsUrl = '/assets/data/lots.json';
 
   constructor(private http: HttpClient) { }
