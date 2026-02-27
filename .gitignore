@@ -19,7 +19,6 @@ Thumbs.db
 *.tmp
 
 # Angular/Frontend specific
-/frontend/src/assets/data/lots.json
 /frontend/.next/
 /frontend/out/
 
