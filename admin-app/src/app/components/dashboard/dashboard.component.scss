@@ -145,6 +145,24 @@
     }
 }
 
+.link-btn {
+    border: none;
+    background: transparent;
+    color: #2563eb;
+    font-weight: 800;
+    font-size: 13px;
+    cursor: pointer;
+    flex: 0 0 auto;
+
+    &:hover {
+        color: #1d4ed8;
+    }
+
+    @media (max-width: 520px) {
+        order: 1;
+    }
+}
+
 .logout {
     border: none;
     background: transparent;

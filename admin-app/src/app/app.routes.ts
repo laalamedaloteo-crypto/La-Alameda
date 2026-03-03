@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LotDetailComponent } from './components/lot-detail/lot-detail.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { inject } from '@angular/core';
 import { AuthService } from './services/auth.service';
 import { Router } from '@angular/router';
@@ -29,6 +30,11 @@ export const routes: Routes = [
     {
         path: 'lot/:id',
         component: LotDetailComponent,
+        canActivate: [authGuard]
+    },
+    {
+        path: 'change-password',
+        component: ChangePasswordComponent,
         canActivate: [authGuard]
     },
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },

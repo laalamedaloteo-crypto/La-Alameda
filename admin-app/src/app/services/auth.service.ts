@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -35,5 +35,19 @@ export class AuthService {
 
     isLoggedIn(): boolean {
         return !!this.getToken();
+    }
+
+    private getHeaders() {
+        return new HttpHeaders({
+            'Authorization': `Bearer ${this.getToken()}`
+        });
+    }
+
+    requestCode(): Observable<any> {
+        return this.http.post(`${this.apiUrl}/request-code`, {}, { headers: this.getHeaders() });
+    }
+
+    changePassword(credentials: { currentPassword: string; newPassword: string; code: string }): Observable<any> {
+        return this.http.post(`${this.apiUrl}/change-password`, credentials, { headers: this.getHeaders() });
     }
 }

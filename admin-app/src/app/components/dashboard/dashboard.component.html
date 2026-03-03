@@ -17,6 +17,7 @@
             <button *ngIf="searchTerm" type="button" class="clear" (click)="searchTerm=''">✕</button>
         </div>
 
+        <button [routerLink]="['/change-password']" class="link-btn">Cambiar clave</button>
         <button (click)="logout()" class="logout">Salir</button>
     </header>
 

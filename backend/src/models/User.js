@@ -23,6 +23,14 @@ const User = sequelize.define('User', {
     name: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    verificationCode: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    codeExpires: {
+        type: DataTypes.DATE,
+        allowNull: true
     }
 }, {
     hooks: {

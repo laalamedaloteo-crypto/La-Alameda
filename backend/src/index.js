@@ -38,12 +38,56 @@ app.use((req, res, next) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/lots', lotsRoutes);
 
+// Bootstrap Admin User
+async function bootstrapAdmin() {
+    try {
+        const User = require('./models/User');
+        const adminEmail = process.env.ADMIN_EMAIL;
+        const adminPassword = process.env.ADMIN_PASSWORD;
+
+        if (!adminEmail || !adminPassword) {
+            console.warn('⚠️ ADMIN_EMAIL o ADMIN_PASSWORD no están configurados en el .env');
+            return;
+        }
+
+        // 1. Intentar encontrar el admin viejo para "migrarlo"
+        const oldAdmin = await User.findOne({ where: { email: 'admin@example.com' } });
+        if (oldAdmin) {
+            oldAdmin.email = adminEmail;
+            oldAdmin.password = adminPassword;
+            await oldAdmin.save();
+            console.log(`✅ Usuario admin migrado de admin@example.com a ${adminEmail}`);
+            return;
+        }
+
+        // 2. Si no existe el viejo, asegurar que exista el nuevo
+        const [user, created] = await User.findOrCreate({
+            where: { email: adminEmail },
+            defaults: {
+                name: 'Admin',
+                email: adminEmail,
+                password: adminPassword
+            }
+        });
+
+        if (created) {
+            console.log(`✅ Usuario admin creado: ${adminEmail}`);
+        } else {
+            console.log(`ℹ️ Usuario admin ${adminEmail} ya existe`);
+        }
+
+    } catch (error) {
+        console.error('❌ Error en bootstrapAdmin:', error);
+    }
+}
+
 // Database Sync & Server Start
 const PORT = process.env.PORT || 3000;
 
-sequelize.sync({ force: false })
-    .then(() => {
+sequelize.sync({ alter: true })
+    .then(async () => {
         console.log('Database connected and synced');
+        await bootstrapAdmin();
         app.listen(PORT, () => {
             console.log(`Server is running on port ${PORT}`);
         });
