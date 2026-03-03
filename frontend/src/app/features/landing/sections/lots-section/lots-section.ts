@@ -48,12 +48,15 @@ export class LotsSection {
     constructor(private api: LotsApiService) {
         const destroyRef = inject(DestroyRef);
 
-        timer(0, 15000).pipe(
+        timer(0, 5000).pipe(
             switchMap(() => this.api.listLots()),
             takeUntilDestroyed(destroyRef)
-        ).subscribe((l) => {
-            console.log('Real-time update: Lots fetched');
-            this.lots.set(l);
+        ).subscribe({
+            next: (l) => {
+                console.log(`[${new Date().toLocaleTimeString()}] Polling update: ${l.length} lots received`);
+                this.lots.set(l);
+            },
+            error: (err) => console.error('🔴 Error in lots polling subscription:', err)
         });
     }
 

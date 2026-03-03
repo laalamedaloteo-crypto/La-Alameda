@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
-import { catchError, Observable, of } from 'rxjs';
+import { catchError, Observable, of, tap } from 'rxjs';
 
 export type LotStatus = 'AVAILABLE' | 'RESERVED' | 'SOLD';
 
@@ -23,9 +23,17 @@ export class LotsApiService {
   constructor(private http: HttpClient) { }
 
   listLots(): Observable<Lot[]> {
-    return this.http.get<Lot[]>(this.apiUrl).pipe(
-      catchError(() => this.http.get<Lot[]>(this.assetsUrl)),
-      catchError(() => of(this.mockLots()))
+    const headers = { 'Cache-Control': 'no-cache', 'Pragma': 'no-cache' };
+    return this.http.get<Lot[]>(this.apiUrl, { headers }).pipe(
+      tap(() => console.log('✅ Fetching from API successful')),
+      catchError((err) => {
+        console.warn('⚠️ API fetch failed, falling back to static JSON:', err.status);
+        return this.http.get<Lot[]>(this.assetsUrl);
+      }),
+      catchError(() => {
+        console.warn('❌ Static JSON fetch failed, using mock data');
+        return of(this.mockLots());
+      })
     );
   }
 

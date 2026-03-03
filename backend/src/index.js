@@ -28,6 +28,13 @@ app.use(cors({
 app.use(express.json());
 
 // Routes
+app.use((req, res, next) => {
+    if (req.path.startsWith('/api')) {
+        console.log(`[${new Date().toLocaleTimeString()}] ${req.method} ${req.path}`);
+    }
+    next();
+});
+
 app.use('/api/auth', authRoutes);
 app.use('/api/lots', lotsRoutes);
 
