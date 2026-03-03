@@ -25,8 +25,8 @@ export class LoginComponent {
         this.error = '';
         this.authService.login({ email: this.email, password: this.password }).subscribe({
             next: () => this.router.navigate(['/dashboard']),
-            error: () => {
-                this.error = 'Credenciales inválidas. Intentá de nuevo.';
+            error: (err) => {
+                this.error = err.error?.message || 'Error al iniciar sesión. Intentá de nuevo.';
                 this.loading = false;
             }
         });
