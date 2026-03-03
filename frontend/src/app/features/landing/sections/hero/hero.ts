@@ -10,6 +10,6 @@ import { UiButton } from '../../../../shared/ui/button/button';
 export class Hero {
   private phone = '5493446000000';
   whatsHref = `https://wa.me/${this.phone}?text=${encodeURIComponent(
-    'Hola! Quiero consultar por un lote.'
+    'Hola! Quiero consultar por la disponibilidad y precio de los lotes.'
   )}`;
 }
