@@ -23,6 +23,10 @@ const authGuard = () => {
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
     {
+        path: 'forgot-password',
+        loadComponent: () => import('./components/forgot-password/forgot-password').then(m => m.ForgotPassword)
+    },
+    {
         path: 'dashboard',
         component: DashboardComponent,
         canActivate: [authGuard]

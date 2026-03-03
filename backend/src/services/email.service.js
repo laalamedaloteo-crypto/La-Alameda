@@ -27,15 +27,15 @@ exports.sendVerificationCode = async (email, name, code) => {
         await resend.emails.send({
             from: 'Inmobiliaria <onboarding@resend.dev>',
             to: email,
-            subject: 'Tu código de verificación',
+            subject: 'Tu código de seguridad',
             html: `
                 <h1>Hola ${name},</h1>
-                <p>Tu código de seguridad para cambiar la contraseña es:</p>
+                <p>Tu código de seguridad (válido para cambiar o recuperar tu contraseña) es:</p>
                 <div style="font-size: 24px; font-weight: bold; background: #f1f5f9; padding: 16px; text-align: center; border-radius: 8px;">
                     ${code}
                 </div>
                 <p>Este código expira en 15 minutos.</p>
-                <p>Si no solicitaste este cambio, por favor ignora este mensaje.</p>
+                <p>Si no solicitaste esta acción, por favor ignora este mensaje.</p>
                 <br>
                 <p>Saludos,<br>Equipo de Inmobiliaria</p>
             `

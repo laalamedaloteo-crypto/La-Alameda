@@ -84,3 +84,52 @@ exports.changePassword = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+
+exports.forgotPassword = async (req, res) => {
+    try {
+        const { email } = req.body;
+        const user = await User.findOne({ where: { email } });
+
+        if (!user) {
+            // Por seguridad, no revelamos si el mail existe o no, pero en este caso 
+            // como es un admin interno, podemos ser más específicos si prefieres.
+            // Vamos a devolver éxito siempre para evitar enumeración de usuarios.
+            return res.json({ message: 'Si el correo existe, se enviará un código' });
+        }
+
+        const code = Math.floor(100000 + Math.random() * 900000).toString();
+        user.verificationCode = code;
+        user.codeExpires = new Date(Date.now() + 15 * 60 * 1000);
+        await user.save();
+
+        await emailService.sendVerificationCode(user.email, user.name, code);
+        res.json({ message: 'Código enviado correctamente' });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+exports.resetPassword = async (req, res) => {
+    try {
+        const { email, code, newPassword } = req.body;
+        const user = await User.findOne({ where: { email } });
+
+        if (!user) return res.status(404).json({ message: 'Usuario no encontrado' });
+        if (!user.verificationCode || user.verificationCode !== code) {
+            return res.status(400).json({ message: 'Código inválido' });
+        }
+        if (new Date() > user.codeExpires) {
+            return res.status(400).json({ message: 'El código ha expirado' });
+        }
+
+        user.password = newPassword;
+        user.verificationCode = null;
+        user.codeExpires = null;
+        await user.save();
+
+        await emailService.sendPasswordChangeNotification(user.email, user.name);
+        res.json({ message: 'Contraseña restablecida correctamente' });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};

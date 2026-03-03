@@ -50,4 +50,12 @@ export class AuthService {
     changePassword(credentials: { currentPassword: string; newPassword: string; code: string }): Observable<any> {
         return this.http.post(`${this.apiUrl}/change-password`, credentials, { headers: this.getHeaders() });
     }
+
+    forgotPassword(email: string): Observable<any> {
+        return this.http.post(`${this.apiUrl}/forgot-password`, { email });
+    }
+
+    resetPassword(data: { email: string; code: string; newPassword: string }): Observable<any> {
+        return this.http.post(`${this.apiUrl}/reset-password`, data);
+    }
 }
