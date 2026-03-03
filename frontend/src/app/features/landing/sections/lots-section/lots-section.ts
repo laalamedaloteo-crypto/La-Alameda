@@ -53,7 +53,6 @@ export class LotsSection {
             takeUntilDestroyed(destroyRef)
         ).subscribe({
             next: (l) => {
-                console.log(`[${new Date().toLocaleTimeString()}] Polling update: ${l.length} lots received`);
                 this.lots.set(l);
             },
             error: (err) => console.error('🔴 Error in lots polling subscription:', err)

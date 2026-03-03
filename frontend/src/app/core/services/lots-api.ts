@@ -25,7 +25,6 @@ export class LotsApiService {
   listLots(): Observable<Lot[]> {
     const headers = { 'Cache-Control': 'no-cache', 'Pragma': 'no-cache' };
     return this.http.get<Lot[]>(this.apiUrl, { headers }).pipe(
-      tap(() => console.log('✅ Fetching from API successful')),
       catchError((err) => {
         console.warn('⚠️ API fetch failed, falling back to static JSON:', err.status);
         return this.http.get<Lot[]>(this.assetsUrl);
