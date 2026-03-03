@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { AutoLogoutService } from './services/auto-logout.service';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,5 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'admin-app';
+  private autoLogout = inject(AutoLogoutService); // Se inicializa al cargar la app
 }
