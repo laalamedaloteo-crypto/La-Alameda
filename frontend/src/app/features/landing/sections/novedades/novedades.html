@@ -1,0 +1,18 @@
+<section id="novedades" class="novedades section">
+  <div class="container container--sm text-center">
+    <div class="section__title">
+      <h2>Novedades</h2>
+      <p class="section__desc">Mantente al tanto de los últimos avances y noticias de La Alameda.</p>
+    </div>
+    
+    <div class="novedades__grid">
+      @for (item of newsItems; track item.title) {
+        <article class="novedades__card">
+          <div class="novedades__card-meta">{{ item.date }}</div>
+          <h3 class="novedades__card-title">{{ item.title }}</h3>
+          <p class="novedades__card-desc">{{ item.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
