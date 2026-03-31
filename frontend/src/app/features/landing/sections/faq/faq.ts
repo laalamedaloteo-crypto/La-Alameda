@@ -15,11 +15,11 @@ export class Faq {
     },
     {
       q: '¿Cómo reservo un lote?',
-      a: ' La reserva se realiza mediante una seña y la firma de la documentación correspondiente. Nuestro equipo te acompaña en todo el proceso para que sea simple y claro.',
+      a: 'La reserva se realiza mediante una seña y la firma de la documentación correspondiente. Nuestro equipo te acompaña en todo el proceso para que sea simple y claro.',
     },
     {
       q: '¿El barrio tiene escritura?',
-      a: 'Sí, se gestiona bajo condiciones del desarrollo. Consultanos por el detalle legal y tiempos.',
+      a: 'Claro! La Alameda es una urbanización aprobada por la Municipalidad de la ciudad de Gualeguaychú, mediante Ordenanza N` …., lo que garantiza el encuadre legal del proyecto. La escritura de tu lote se encuentra plenamente disponible.',
     },
     {
       q: '¿Qué servicios incluye?',
