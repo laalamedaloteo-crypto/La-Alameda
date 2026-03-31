@@ -1,0 +1,23 @@
+<div class="novedades__section">
+  <h3 class="novedades__subtitle"><span class="line"></span> Destacadas</h3>
+  
+  <div class="destacadas-grid">
+    @for (item of destacadas; track item.title) {
+      <article class="card destacada-card">
+        <div class="destacada-card__img-wrapper">
+          <span class="destacada-card__badge">{{ item.badge }}</span>
+          <img [src]="item.image" [alt]="item.title" class="destacada-card__img" />
+        </div>
+        <div class="destacada-card__content">
+          <div class="destacada-card__meta">
+            <svg viewBox="0 0 24 24" class="icon-sm" fill="none"><path d="M19 4H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            {{ item.date }}
+          </div>
+          <h4 class="destacada-card__title">{{ item.title }}</h4>
+          <p class="destacada-card__desc">{{ item.description }}</p>
+          <a href="javascript:void(0)" class="destacada-card__link">LEER MÁS <svg viewBox="0 0 24 24" class="icon-arrow" fill="none"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </article>
+    }
+  </div>
+</div>

@@ -11,15 +11,11 @@ export class Faq {
   faqs = [
     {
       q: '¿Cuáles son las formas de pago?',
-      a: 'Podés reservar con seña y completar el pago según disponibilidad. Consultanos por opciones y financiación.',
+      a: 'Contamos con opciones de pago al contado, con entrega inicial y financiación, o planes 100% financiados. Consultanos para más información.',
     },
     {
       q: '¿Cómo reservo un lote?',
-      a: 'Te contactás por WhatsApp, elegís el lote disponible y coordinamos la reserva con documentación.',
-    },
-    {
-      q: '¿Cuándo puedo empezar a construir?',
-      a: 'Depende del lote y etapa del desarrollo. Coordinamos una visita y te informamos plazos y condiciones.',
+      a: ' La reserva se realiza mediante una seña y la firma de la documentación correspondiente. Nuestro equipo te acompaña en todo el proceso para que sea simple y claro.',
     },
     {
       q: '¿El barrio tiene escritura?',
@@ -27,7 +23,7 @@ export class Faq {
     },
     {
       q: '¿Qué servicios incluye?',
-      a: 'Acceso jerarquizado, calles planificadas, iluminación, espacios verdes y conectividad según disponibilidad.',
+      a: 'La Alameda cuenta con una infraestructura completa, diseñada para brindar calidad y funcionamiento desde el inicio. Incluye parquización perimetral, calles con pavimento articulado, red de agua potable, tendido eléctrico subterráneo, luz solar sobre su boulevard y disponibilidad de conexión a internet por fibra óptica. Además, el proyecto incorpora portal de acceso que jerarquiza el ingreso, sistema de videovigilancia sobre el boulevard y una planificación general orientada al orden y la integración con el entorno. Es importante destacar que se trata de una urbanización abierta, por lo que no tiene expensas.',
     },
   ];
 

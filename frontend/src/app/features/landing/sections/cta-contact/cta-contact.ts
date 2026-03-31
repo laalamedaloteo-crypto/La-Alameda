@@ -9,9 +9,9 @@ import { UiButton } from '../../../../shared/ui/button/button';
 })
 export class CtaContact {
   // Cambiá por tus datos reales
-  phoneDisplay = '+54 9 3446 000-000';
-  phoneWa = '5493446000000';
-  email = 'info@laalameda.com.ar';
+  phoneDisplay = '+54 3446 370409';
+  phoneWa = '5493446370409';
+  email = 'benettipropiedades@gmail.com';
 
   whatsHref = `https://wa.me/${this.phoneWa}?text=${encodeURIComponent(
     'Hola! Quiero agendar una visita personalizada y recibir info de lotes disponibles.'

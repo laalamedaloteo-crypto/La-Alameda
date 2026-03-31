@@ -1,18 +1,21 @@
 <section id="novedades" class="novedades section">
-  <div class="container container--sm text-center">
-    <div class="section__title">
-      <h2>Novedades</h2>
-      <p class="section__desc">Mantente al tanto de los últimos avances y noticias de La Alameda.</p>
-    </div>
-    
-    <div class="novedades__grid">
-      @for (item of newsItems; track item.title) {
-        <article class="novedades__card">
-          <div class="novedades__card-meta">{{ item.date }}</div>
-          <h3 class="novedades__card-title">{{ item.title }}</h3>
-          <p class="novedades__card-desc">{{ item.description }}</p>
-        </article>
-      }
-    </div>
+  <div class="container container--lg">
+
+    <!-- HEADER -->
+    <header class="novedades__header text-center">
+      <div class="kicker mb-2">ÚLTIMAS ACTUALIZACIONES</div>
+      <h2 class="novedades__title text-center">Novedades</h2>
+      <div class="novedades__divider"></div>
+      <p class="novedades__desc text-center">
+        Seguí de cerca cada avance del desarrollo, nuevos lotes disponibles, eventos exclusivos y contenido pensado para
+        vos.
+      </p>
+    </header>
+
+    <novedades-destacadas [destacadas]="destacadas"></novedades-destacadas>
+    <novedades-avance [timeline]="timeline"></novedades-avance>
+    <novedades-galeria [galeria]="galeria"></novedades-galeria>
+    <novedades-articulos [articulos]="articulos"></novedades-articulos>
+
   </div>
 </section>
