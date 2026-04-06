@@ -18,7 +18,7 @@ export class Location {
 
   constructor(private sanitizer: DomSanitizer) {
     const raw =
-      'https://www.google.com/maps?q=-34.458,-58.914&z=12&output=embed';
+      'https://www.google.com/maps?q=-33.035575,-58.45494&z=14&output=embed';
 
     this.mapSrc = this.sanitizer.bypassSecurityTrustResourceUrl(raw);
   }
