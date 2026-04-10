@@ -11,9 +11,9 @@ export class Location {
   mapSrc: SafeResourceUrl;
 
   items = [
-    { icon: 'car', text: '35 min desde CABA por Autopista del Sol' },
-    { icon: 'clock', text: '10 min del centro de Pilar' },
-    { icon: 'pin', text: 'Cerca de colegios, shopping y clínicas' },
+    { icon: 'pin', text: 'A 5’ de Pueblo G. Belgrano' },
+    { icon: 'pin', text: 'A 10’ del centro de Gualeguaychú' },
+    { icon: 'pin', text: 'A 2.30 hs de la Ciudad de Bs As' },
   ];
 
   constructor(private sanitizer: DomSanitizer) {
