@@ -20,9 +20,32 @@
           </div>
           <h4 class="articulo-card__title">{{ item.title }}</h4>
           <p class="articulo-card__desc">{{ item.description }}</p>
-          <a href="javascript:void(0)" class="destacada-card__link">LEER MÁS <svg viewBox="0 0 24 24" class="icon-arrow" fill="none"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="javascript:void(0)" class="destacada-card__link" (click)="openArticle(item)">LEER MÁS <svg viewBox="0 0 24 24" class="icon-arrow" fill="none"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </article>
     }
   </div>
 </div>
+
+@if (selectedArticle) {
+<div class="article-modal" (click)="closeArticle()">
+  <div class="article-modal__content" (click)="$event.stopPropagation()">
+    <button class="article-modal__close" aria-label="Cerrar artículo" (click)="closeArticle()">✕</button>
+    
+    <div class="article-modal__hero">
+      <img [src]="selectedArticle.image" [alt]="selectedArticle.title" class="article-modal__img" />
+    </div>
+    
+    <div class="article-modal__body">
+      <div class="article-modal__meta">
+        <span class="source">{{ selectedArticle.source }}</span> • 
+        <span class="date">{{ selectedArticle.date }}</span>
+      </div>
+      <h2 class="article-modal__title">{{ selectedArticle.title }}</h2>
+      <div class="article-modal__text">
+        {{ selectedArticle.fullContent }}
+      </div>
+    </div>
+  </div>
+</div>
+}

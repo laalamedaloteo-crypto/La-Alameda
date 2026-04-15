@@ -19,7 +19,7 @@ export class Faq {
     },
     {
       q: '¿El barrio tiene escritura?',
-      a: 'Claro! La Alameda es una urbanización aprobada por la Municipalidad de la ciudad de Gualeguaychú, mediante Ordenanza N` …., lo que garantiza el encuadre legal del proyecto. La escritura de tu lote se encuentra plenamente disponible.',
+      a: 'Claro! La Alameda es una urbanización aprobada por la Municipalidad de la ciudad de Gualeguaychú, mediante Ordenanza Nro. 13.066/2026, lo que garantiza el encuadre legal del proyecto. La escritura de tu lote se encuentra plenamente disponible.',
     },
     {
       q: '¿Qué servicios incluye?',
