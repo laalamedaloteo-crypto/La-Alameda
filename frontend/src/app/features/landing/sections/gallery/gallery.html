@@ -5,13 +5,24 @@
             <h2 class="gallery__title">Conocé La Alameda</h2>
         </div>
 
-        <div class="gallery__frame">
+        <div class="gallery__frame" 
+             (touchstart)="onTouchStart($event)" 
+             (touchend)="onTouchEnd($event)"
+             (wheel)="onWheel($event)">
             <button class="nav prev" type="button" aria-label="Anterior" (click)="prev()">
                 ‹
             </button>
 
             <div class="gallery__media" role="group" aria-label="Galería de imágenes">
-                <img class="gallery__img" [src]="images[index]" alt="Imagen de la galería" loading="lazy" />
+                @for (img of images; track trackByIndex($index)) {
+                <div class="gallery__item" 
+                     [class.active]="$index === index" 
+                     [class.prev]="$index === getPrevIndex(index)"
+                     [class.next]="$index === getNextIndex(index)"
+                     (click)="onItemClick($index)">
+                    <img class="gallery__img" [src]="img" alt="Imagen de la galería" loading="lazy" />
+                </div>
+                }
             </div>
 
             <button class="nav next" type="button" aria-label="Siguiente" (click)="next()">
@@ -28,3 +39,17 @@
         </div>
     </div>
 </section>
+
+@if (isLightboxOpen) {
+<div class="lightbox" (click)="closeLightbox()">
+    <button class="lightbox__close" aria-label="Cerrar modal" (click)="closeLightbox()">✕</button>
+    
+    <button class="nav prev lightbox__nav" aria-label="Anterior" (click)="prevLightbox($event)">‹</button>
+    
+    <div class="lightbox__content" (click)="$event.stopPropagation()">
+        <img [src]="images[lightboxIndex]" alt="Imagen ampliada" class="lightbox__img" />
+    </div>
+
+    <button class="nav next lightbox__nav" aria-label="Siguiente" (click)="nextLightbox($event)">›</button>
+</div>
+}
