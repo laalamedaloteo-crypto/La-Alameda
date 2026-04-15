@@ -9,6 +9,15 @@ import { UiButton } from '../../../shared/ui/button/button';
 })
 export class Navbar {
   scrolled = signal(false);
+  isMobileMenuOpen = signal(false);
+
+  toggleMenu() {
+    this.isMobileMenuOpen.update(v => !v);
+  }
+
+  closeMenu() {
+    this.isMobileMenuOpen.set(false);
+  }
 
   // Cambiá esto por tu WhatsApp o ruta de contacto
   private phone = '5493446370409';

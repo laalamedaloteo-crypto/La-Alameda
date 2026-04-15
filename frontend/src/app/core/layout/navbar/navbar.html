@@ -17,6 +17,22 @@
         <div class="nav__cta">
             <ui-button variant="gold" size="sm" label="CONTACTAR" [href]="contactHref">
             </ui-button>
+            <button class="hamburger" [class.open]="isMobileMenuOpen()" (click)="toggleMenu()" aria-label="Alternar menú">
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+            </button>
         </div>
+
+        <nav class="mobile-menu" [class.open]="isMobileMenuOpen()">
+            <a href="/#top" (click)="closeMenu()">INICIO</a>
+            <a href="/#urbanizacion" (click)="closeMenu()">URBANIZACIÓN</a>
+            <a href="/#lotes" (click)="closeMenu()">LOTES</a>
+            <a href="/#galeria" (click)="closeMenu()">GALERÍA</a>
+            <a href="/#ubicacion" (click)="closeMenu()">UBICACIÓN</a>
+            <a href="/#faq" (click)="closeMenu()">FAQ</a>
+            <a href="/novedades" (click)="closeMenu()">NOVEDADES</a>
+            <a href="/#contacto" (click)="closeMenu()">CONTACTO</a>
+        </nav>
     </div>
 </header>
