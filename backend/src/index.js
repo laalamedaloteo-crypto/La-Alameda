@@ -12,13 +12,21 @@ const app = express();
 // Middleware
 const allowedOrigins = process.env.ALLOWED_ORIGINS
     ? process.env.ALLOWED_ORIGINS.split(',')
-    : ['http://localhost:4200', 'http://localhost:4201'];
+    : [];
+
+if (process.env.NODE_ENV === 'production' && allowedOrigins.length === 0) {
+    console.warn('⚠️ ADVERTENCIA: No se han configurado ALLOWED_ORIGINS en producción. Las peticiones externas podrían fallar.');
+}
 
 app.use(cors({
     origin: (origin, callback) => {
-        if (!origin || allowedOrigins.includes(origin)) {
+        // En desarrollo permitimos todo lo que venga de localhost
+        const isLocalhost = !origin || origin.startsWith('http://localhost');
+        
+        if (isLocalhost || allowedOrigins.includes(origin)) {
             callback(null, true);
         } else {
+            console.error(`❌ Bloqueado por CORS: ${origin}`);
             callback(new Error('Not allowed by CORS'));
         }
     },
@@ -84,10 +92,20 @@ async function bootstrapAdmin() {
 // Database Sync & Server Start
 const PORT = process.env.PORT || 3000;
 
+const syncLots = require('./utils/sync-lots');
+
 sequelize.sync({ alter: true })
     .then(async () => {
         console.log('Database connected and synced');
         await bootstrapAdmin();
+        
+        // Sincronización automática de lotes (JSON -> DB)
+        try {
+            await syncLots();
+        } catch (err) {
+            console.error('⚠️ Falló la sincronización automática de lotes, pero el servidor iniciará igualmente.');
+        }
+
         app.listen(PORT, () => {
             console.log(`Server is running on port ${PORT}`);
         });
