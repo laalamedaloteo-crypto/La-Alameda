@@ -108,9 +108,7 @@
                             <span class="value">{{ lot.priceUsd | currency:'USD':'symbol':'1.0-0' }}</span>
                         </div>
 
-                        <p *ngIf="lot.description" class="desc">
-                            {{ lot.description }}
-                        </p>
+                        <p *ngIf="lot.description" class="desc">{{ lot.description }}</p>
                     </div>
 
                     <button class="edit" type="button" (click)="$event.stopPropagation()"

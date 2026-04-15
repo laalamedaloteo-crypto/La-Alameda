@@ -69,9 +69,10 @@
     font-size: 0.8125rem;
     color: rgba(255, 255, 255, 0.6);
     line-height: 1.5;
+    white-space: pre-wrap;
     display: -webkit-box;
-    line-clamp: 2;
-    -webkit-line-clamp: 2;
+    line-clamp: 4;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
     flex: 1;
