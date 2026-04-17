@@ -25,7 +25,7 @@ export class LotsSection {
     query = signal<string>('');
 
     page = signal(1);
-    pageSize = 12;
+    pageSize = 8;
 
     filteredLots = computed(() => {
         const f = this.filter();
