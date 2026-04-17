@@ -42,19 +42,21 @@
     background: rgba(0, 0, 0, 0.35);
 }
 
-/* Carrusel */
 .track {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 12px;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     padding-bottom: 6px;
-    scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    
+    /* El alto máximo para aproximadamente 2 filas (cards son ~160px + 12px gap) */
+    max-height: 350px;  
 }
 
 .track::-webkit-scrollbar {
-    height: 8px;
+    width: 6px;
 }
 
 .track::-webkit-scrollbar-thumb {

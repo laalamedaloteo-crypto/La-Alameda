@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
 import { Lot } from '../../../../core/services/lots-api';
 import { LotCard } from '../../../../shared/lots/lot-card/lot-card';
@@ -17,16 +17,7 @@ export class LotsGrid {
 
   @Output() selectLot = new EventEmitter<Lot>();
 
-  @ViewChild('track') track?: ElementRef<HTMLDivElement>;
-
   onClick(lot: Lot) {
     this.selectLot.emit(lot);
-  }
-
-  scroll(dir: 'prev' | 'next') {
-    const el = this.track?.nativeElement;
-    if (!el) return;
-    const amount = Math.round(el.clientWidth * 0.85);
-    el.scrollBy({ left: dir === 'next' ? amount : -amount, behavior: 'smooth' });
   }
 }
