@@ -23,9 +23,8 @@ export class LotsSection {
     tab = signal<Tab>('list');
     filter = signal<Filter>('ALL');
     query = signal<string>('');
+    isFilterDropdownOpen = signal<boolean>(false);
 
-    page = signal(1);
-    pageSize = 8;
 
     filteredLots = computed(() => {
         const f = this.filter();
@@ -37,13 +36,6 @@ export class LotsSection {
 
         return [...arr].sort((a, b) => a.id.localeCompare(b.id));
     });
-
-    pagedLots = computed(() => {
-        const end = this.page() * this.pageSize;
-        return this.filteredLots().slice(0, end);
-    });
-
-    hasMore = computed(() => this.pagedLots().length < this.filteredLots().length);
 
     constructor(private api: LotsApiService) {
         const destroyRef = inject(DestroyRef);
@@ -61,7 +53,6 @@ export class LotsSection {
 
     setFilter(f: Filter) {
         this.filter.set(f);
-        this.page.set(1);
         this.selected.set(null);
     }
 
@@ -69,9 +60,7 @@ export class LotsSection {
         this.tab.set(t);
     }
 
-    loadMore() {
-        this.page.set(this.page() + 1);
-    }
+
 
     onSelect(lot: Lot) {
         this.selected.set(lot);

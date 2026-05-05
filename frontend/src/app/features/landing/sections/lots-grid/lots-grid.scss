@@ -63,3 +63,15 @@
     background: rgba(200, 180, 138, 0.35);
     border-radius: 999px;
 }
+
+@media (max-width: 768px) {
+    .track {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: 520px; /* Approx 3 rows of cards */
+        padding-bottom: 12px;
+    }
+}
