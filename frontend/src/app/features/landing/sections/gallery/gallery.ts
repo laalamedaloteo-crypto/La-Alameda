@@ -9,24 +9,31 @@ import { Component } from '@angular/core';
 export class Gallery {
   // Cambiá estas rutas por tus fotos (vos las elegís)
   images: string[] = [
-    '/assets/media/gallery/1.png',
-    '/assets/media/gallery/2.png',
-    '/assets/media/gallery/3.png',
-    '/assets/media/gallery/4.png',
+    '/assets/media/gallery/1.jpg',
+    '/assets/media/gallery/2.jpg',
+    '/assets/media/gallery/3.jpg',
+    '/assets/media/gallery/4.jpg',
     '/assets/media/gallery/5.jpg',
     '/assets/media/gallery/6.jpg',
     '/assets/media/gallery/7.jpg',
     '/assets/media/gallery/8.jpg',
     '/assets/media/gallery/9.jpg',
     '/assets/media/gallery/10.jpg',
-    '/assets/media/gallery/11.jpeg',
+    '/assets/media/gallery/11.jpg',
+    '/assets/media/gallery/12.jpg',
+    '/assets/media/gallery/13.jpg',
+    '/assets/media/gallery/14.jpg',
+    '/assets/media/gallery/15.jpg',
+    '/assets/media/gallery/16.jpg',
+    '/assets/media/gallery/17.jpg',
+    '/assets/media/gallery/18.jpg',
   ];
 
   index = 0;
 
   // Touch & Swipe
   touchStartX = 0;
-  
+
   // Trackpad / Wheel
   lastWheelTime = 0;
 

@@ -49,7 +49,7 @@ export class LotsMap implements OnChanges, OnDestroy {
 
   options: L.MapOptions = {
     crs: L.CRS.Simple,
-    zoomControl: true,
+    zoomControl: false,
     attributionControl: false,
     minZoom: -1,
     maxZoom: 4,
