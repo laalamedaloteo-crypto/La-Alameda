@@ -43,7 +43,6 @@
 .lots__tabs {
     display: inline-flex;
     gap: 10px;
-    margin-top: 6px;
 }
 
 .tab {
@@ -65,11 +64,34 @@
     border-color: rgba(200, 180, 138, 0.95);
 }
 
+.lots__controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 18px;
+}
+
+@media (min-width: 768px) {
+    .lots__controls {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        gap: 20px;
+    }
+}
+
 .lots__toolbar {
-    margin: 22px 0 18px;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .lots__toolbar {
+        width: auto;
+    }
 }
 
 .search-filter-bar {
@@ -77,11 +99,20 @@
     align-items: center;
     background: rgba(0, 0, 0, 0.25);
     border: 1px solid rgba(244, 241, 234, 0.15);
-    border-radius: 40px; /* Pill shape */
+    border-radius: 40px;
+    /* Pill shape */
     padding: 4px 8px;
-    width: min(400px, 100%);
+    width: 100%;
+    max-width: 400px;
     position: relative;
     transition: border-color 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .search-filter-bar {
+        max-width: 350px;
+        width: 350px;
+    }
 }
 
 .search-filter-bar:focus-within {

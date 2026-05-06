@@ -6,14 +6,15 @@
             <p class="lots__subtitle">La Alameda cuenta con 61 lotes de 1.250 m², diseñados dentro de una urbanización
                 abierta, con una planificación ordenada y acceso directo desde el Camino al Ñandubaysal. Cada lote ha
                 sido pensado para ofrecer amplitud, funcionalidad y una integración natural con el entorno.</p>
+        </div>
 
+        <div class="lots__controls">
             <div class="lots__tabs">
                 <button class="tab" [class.on]="tab() === 'list'" (click)="setTab('list')">LISTADO</button>
                 <button class="tab" [class.on]="tab() === 'map'" (click)="setTab('map')">MAPA</button>
             </div>
-        </div>
 
-        <div class="lots__toolbar">
+            <div class="lots__toolbar">
             <div class="search-filter-bar">
                 <div class="search-icon">
                     <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
@@ -57,6 +58,8 @@
                     }
                 </div>
             </div>
+        </div>
+
         </div>
 
         <!-- ✅ GRID siempre montado (solo se oculta) -->

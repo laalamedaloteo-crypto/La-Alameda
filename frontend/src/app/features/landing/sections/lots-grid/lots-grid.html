@@ -1,8 +1,4 @@
 <div class="carousel">
-    <div class="carousel__head">
-        <div class="carousel__title">Lotes</div>
-    </div>
-
     <div #track class="track">
         @for (lot of lots; track lot.id) {
         <lot-card [lot]="lot" [active]="selected?.id === lot.id" (select)="onClick($event)">
