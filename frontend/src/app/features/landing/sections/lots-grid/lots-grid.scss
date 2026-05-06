@@ -50,9 +50,9 @@
     overflow-y: auto;
     padding-bottom: 6px;
     -webkit-overflow-scrolling: touch;
-    
+
     /* El alto máximo para aproximadamente 2 filas (cards son ~160px + 12px gap) */
-    max-height: 350px;  
+    max-height: 350px;
 }
 
 .track::-webkit-scrollbar {
@@ -71,7 +71,9 @@
         justify-items: center;
         overflow-x: hidden;
         overflow-y: auto;
-        max-height: 520px; /* Approx 3 rows of cards */
+        padding-left: 12px;
+        max-height: 520px;
+        /* Approx 3 rows of cards */
         padding-bottom: 12px;
     }
 }

@@ -3,11 +3,12 @@
 }
 
 .card {
-    min-width: 280px;
-    max-width: 280px;
+    min-width: 260px;
+    max-width: 260px;
     padding: 16px;
     border: 1px solid rgba(244, 241, 234, 0.10);
     background: rgba(255, 255, 255, 0.02);
+    border-radius: 16px;
     transition: border-color 160ms ease, transform 160ms ease, background 160ms ease;
     cursor: pointer;
     height: 100%;
@@ -34,34 +35,41 @@
 
 .code {
     font-family: "Playfair Display", serif;
-    color: rgba(244, 241, 234, 0.96);
-    font-size: 16px;
+    color: rgba(200, 180, 138, 0.95);
+    font-size: 24px;
+    font-weight: 600;
 }
 
-.row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     margin-top: 14px;
 }
 
-.kv .k {
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(244, 241, 234, 0.50);
-    margin-bottom: 6px;
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.kv .v {
-    color: rgba(244, 241, 234, 0.90);
+.icon {
+    color: rgba(200, 180, 138, 0.8);
+    flex-shrink: 0;
+}
+
+.detail-text {
     font-size: 13px;
+    color: rgba(244, 241, 234, 0.7);
 }
 
-.kv .v.gold {
-    color: rgba(244, 241, 234, 0.90);
-    ;
+.detail-text strong {
     font-weight: 600;
+    color: rgba(244, 241, 234, 0.96);
+}
+
+.detail-text strong.gold {
+    color: rgba(200, 180, 138, 0.95);
 }
 
 .description {
@@ -79,7 +87,36 @@
 }
 
 .cta {
-    margin-top: 12px;
+    margin-top: auto;
     display: flex;
     justify-content: center;
+}
+
+.divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    margin: 16px 0;
+    width: 100%;
+}
+
+.action-btn {
+    width: 100%;
+    background: rgba(200, 180, 138, 0.95);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 13px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(179, 145, 95, 0.25);
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    background: #9d7b4c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(179, 145, 95, 0.35);
 }
