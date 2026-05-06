@@ -49,19 +49,25 @@
     overflow-x: hidden;
     overflow-y: auto;
     padding-bottom: 6px;
+    padding-left: 14px;
+    padding-right: 14px;
+    box-sizing: border-box;
     -webkit-overflow-scrolling: touch;
+    border-radius: 8px;
 
     /* El alto máximo para aproximadamente 2 filas (cards son ~160px + 12px gap) */
     max-height: 350px;
 }
 
 .track::-webkit-scrollbar {
-    width: 6px;
+    width: 14px;
 }
 
 .track::-webkit-scrollbar-thumb {
-    background: rgba(200, 180, 138, 0.35);
+    background: rgba(200, 180, 138, 0.45);
     border-radius: 999px;
+    border: 4px solid rgba(255, 255, 255, 0);
+    background-clip: padding-box;
 }
 
 @media (max-width: 768px) {

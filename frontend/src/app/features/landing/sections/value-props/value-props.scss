@@ -50,6 +50,7 @@
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(244, 241, 234, 0.10);
     min-height: 240px;
+    border-radius: 8px;
 
     transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
 }
@@ -63,6 +64,7 @@
 .project__iconBox {
     width: 56px;
     height: 56px;
+    border-radius: 8px;
     display: grid;
     place-items: center;
 
