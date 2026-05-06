@@ -40,6 +40,7 @@
     border: 1px solid rgba(244, 241, 234, 0.10);
     background: rgba(0, 0, 0, 0.18);
     backdrop-filter: blur(10px);
+    border-radius: 4px;
 }
 
 /* Pregunta */
@@ -75,6 +76,7 @@
     background: rgba(0, 0, 0, 0.20);
     color: rgba(244, 241, 234, 0.70);
     transition: transform 160ms ease, border-color 160ms ease;
+    border-radius: 4px;
 }
 
 .chev.open {
