@@ -68,49 +68,109 @@
 .lots__toolbar {
     margin: 22px 0 18px;
     display: flex;
-    justify-content: space-between;
-    gap: 14px;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
-.filters {
+.search-filter-bar {
     display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(244, 241, 234, 0.15);
+    border-radius: 40px; /* Pill shape */
+    padding: 4px 8px;
+    width: min(400px, 100%);
+    position: relative;
+    transition: border-color 0.3s ease;
 }
 
-.chip {
-    height: 34px;
-    padding: 0 14px;
-    border-radius: 0;
-    border: 1px solid rgba(244, 241, 234, 0.10);
-    background: rgba(0, 0, 0, 0.18);
-    color: rgba(244, 241, 234, 0.62);
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
+.search-filter-bar:focus-within {
+    border-color: rgba(200, 180, 138, 0.6);
 }
 
-.chip.on {
-    background: rgba(200, 180, 138, 0.95);
-    color: rgba(10, 10, 12, 0.95);
-    border-color: rgba(200, 180, 138, 0.95);
+.search-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    color: rgba(244, 241, 234, 0.5);
 }
 
-.search input {
-    height: 34px;
-    width: min(320px, 100%);
-    border-radius: 0;
-    border: 1px solid rgba(244, 241, 234, 0.10);
-    background: rgba(0, 0, 0, 0.18);
-    color: rgba(244, 241, 234, 0.85);
-    padding: 0 12px;
+.search-filter-bar input {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    color: rgba(244, 241, 234, 0.9);
+    height: 36px;
     outline: none;
+    font-size: 14px;
 }
 
-.search input::placeholder {
+.search-filter-bar input::placeholder {
     color: rgba(244, 241, 234, 0.45);
+}
+
+.filter-dropdown-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.filter-icon-btn {
+    background: transparent;
+    border: none;
+    color: rgba(244, 241, 234, 0.5);
+    cursor: pointer;
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.filter-icon-btn:hover,
+.filter-icon-btn.active {
+    color: rgba(200, 180, 138, 0.95);
+    background: rgba(244, 241, 234, 0.05);
+}
+
+.filter-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: #111115;
+    border: 1px solid rgba(244, 241, 234, 0.1);
+    border-radius: 12px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 160px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.filter-option {
+    background: transparent;
+    border: none;
+    color: rgba(244, 241, 234, 0.7);
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-option:hover {
+    background: rgba(244, 241, 234, 0.05);
+    color: rgba(244, 241, 234, 0.95);
+}
+
+.filter-option.on {
+    color: rgba(200, 180, 138, 0.95);
+    background: rgba(200, 180, 138, 0.1);
 }
 
 .more {
