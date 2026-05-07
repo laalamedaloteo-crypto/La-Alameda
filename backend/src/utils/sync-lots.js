@@ -12,7 +12,7 @@ const { Op } = require('sequelize');
  */
 async function syncLots() {
     try {
-        const lotsJsonPath = path.join(__dirname, '../../../frontend/src/assets/data/lots.json');
+        const lotsJsonPath = path.join(__dirname, '../data/lots.json');
         
         if (!fs.existsSync(lotsJsonPath)) {
             console.warn('⚠️ No se encontró el archivo lots.json para sincronizar.');
