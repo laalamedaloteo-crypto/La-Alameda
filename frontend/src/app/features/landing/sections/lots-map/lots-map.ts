@@ -42,9 +42,9 @@ export class LotsMap implements OnChanges, OnDestroy {
 
   private readonly imgUrl = '/assets/media/masterplan.png';
 
-  // ✅ Tu imagen: 615×584 (ancho×alto)
-  private readonly IMG_W = 615;
-  private readonly IMG_H = 584;
+  // ✅ Tu imagen: 4864×3328 (ancho×alto)
+  private readonly IMG_W = 4864;
+  private readonly IMG_H = 3328;
   private readonly bounds = L.latLngBounds([0, 0], [this.IMG_H, this.IMG_W]);
 
   options: L.MapOptions = {

@@ -13,10 +13,10 @@
         <ui-button variant="gold" label="Exportar JSON" (click)="exportAll()"></ui-button>
     </div>
 
-    <div class="editor-hint">
-        Tip: seleccioná un lote (L-01…L-23), usá la herramienta de polígono del mapa (izquierda),
-        clickeá vértices y doble click para terminar. Luego “Exportar JSON”.
-    </div>
+        <div class="editor-hint">
+            Tip: seleccioná un lote (L-01…L-66), usá la herramienta de polígono del mapa (izquierda),
+            clickeá vértices y doble click para terminar. Luego “Exportar JSON”.
+        </div>
 
     @if (exportJson()) {
     <textarea class="exportBox" readonly [value]="exportJson()"></textarea>

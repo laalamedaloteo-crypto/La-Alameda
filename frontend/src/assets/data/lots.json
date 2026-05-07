@@ -1,826 +1,1656 @@
 [
-    {
-        "id": "L-01",
-        "code": "L-01",
-        "areaM2": 0,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": [
-            [
-                502,
-                477
-            ],
-            [
-                476,
-                499
-            ],
-            [
-                449,
-                520
-            ],
-            [
-                439,
-                528
-            ],
-            [
-                430,
-                542
-            ],
-            [
-                427,
-                564
-            ],
-            [
-                429,
-                576
-            ],
-            [
-                431,
-                591
-            ],
-            [
-                417,
-                586
-            ],
-            [
-                403,
-                563
-            ],
-            [
-                423,
-                451
-            ],
-            [
-                472,
-                447
-            ]
-        ]
-    },
-    {
-        "id": "L-02",
-        "code": "L-02",
-        "areaM2": 0,
-        "priceUsd": 0,
-        "status": "RESERVED",
-        "polygon": [
-            [
-                422,
-                451
-            ],
-            [
-                414,
-                452
-            ],
-            [
-                408,
-                451
-            ],
-            [
-                384,
-                444
-            ],
-            [
-                380,
-                442
-            ],
-            [
-                370,
-                431
-            ],
-            [
-                331,
-                469
-            ],
-            [
-                353,
-                495
-            ],
-            [
-                361,
-                507
-            ],
-            [
-                373,
-                522
-            ],
-            [
-                384,
-                536
-            ],
-            [
-                403,
-                562
-            ]
-        ]
-    },
-    {
-        "id": "L-03",
-        "code": "L-03",
-        "areaM2": 0,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": [
-            [
-                333,
-                469
-            ],
-            [
-                319,
-                463
-            ],
-            [
-                285,
-                458
-            ],
-            [
-                265,
-                449
-            ],
-            [
-                333,
-                357
-            ],
-            [
-                348,
-                379
-            ],
-            [
-                359,
-                403
-            ],
-            [
-                371,
-                427
-            ]
-        ]
-    },
-    {
-        "id": "L-04",
-        "code": "L-04",
-        "areaM2": 0,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": [
-            [
-                333,
-                355
-            ],
-            [
-                307,
-                341
-            ],
-            [
-                277,
-                332
-            ],
-            [
-                230,
-                426
-            ],
-            [
-                264,
-                446
-            ]
-        ]
-    },
-    {
-        "id": "L-05",
-        "code": "L-05",
-        "areaM2": 0,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": [
-            [
-                222,
-                306
-            ],
-            [
-                175,
-                394
-            ],
-            [
-                197,
-                407
-            ],
-            [
-                227,
-                426
-            ],
-            [
-                274,
-                333
-            ],
-            [
-                263,
-                329
-            ],
-            [
-                254,
-                326
-            ],
-            [
-                246,
-                324
-            ],
-            [
-                234,
-                317
-            ]
-        ]
-    },
-    {
-        "id": "L-06",
-        "code": "L-06",
-        "areaM2": 0,
-        "priceUsd": 0,
-        "status": "SOLD",
-        "polygon": [
-            [
-                221,
-                305
-            ],
-            [
-                214,
-                298
-            ],
-            [
-                210,
-                295
-            ],
-            [
-                200,
-                288
-            ],
-            [
-                196,
-                286
-            ],
-            [
-                175,
-                280
-            ],
-            [
-                154,
-                291
-            ],
-            [
-                133,
-                372
-            ],
-            [
-                174,
-                393
-            ]
-        ]
-    },
-    {
-        "id": "L-07",
-        "code": "L-07",
-        "areaM2": 0,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": [
-            [
-                153,
-                290
-            ],
-            [
-                145,
-                297
-            ],
-            [
-                138,
-                307
-            ],
-            [
-                123,
-                307
-            ],
-            [
-                33,
-                307
-            ],
-            [
-                28,
-                322
-            ],
-            [
-                21,
-                358
-            ],
-            [
-                60,
-                366
-            ],
-            [
-                89,
-                364
-            ],
-            [
-                132,
-                372
-            ]
-        ]
-    },
-    {
-        "id": "L-08",
-        "code": "L-08",
-        "areaM2": 0,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": [
-            [
-                128,
-                307
-            ],
-            [
-                32,
-                307
-            ],
-            [
-                40,
-                300
-            ],
-            [
-                43,
-                286
-            ],
-            [
-                64,
-                265
-            ],
-            [
-                77,
-                259
-            ],
-            [
-                101,
-                239
-            ],
-            [
-                100,
-                197
-            ],
-            [
-                107,
-                193
-            ],
-            [
-                128,
-                193
-            ],
-            [
-                142,
-                203
-            ],
-            [
-                154,
-                227
-            ],
-            [
-                138,
-                257
-            ],
-            [
-                128,
-                278
-            ],
-            [
-                124,
-                286
-            ],
-            [
-                121,
-                292
-            ],
-            [
-                123,
-                303
-            ]
-        ]
-    },
-    {
-        "id": "L-09",
-        "code": "L-09",
-        "areaM2": 0,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-10",
-        "code": "L-10",
-        "areaM2": 0,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-11",
-        "code": "L-11",
-        "areaM2": 0,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-12",
-        "code": "L-12",
-        "areaM2": 0,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-13",
-        "code": "L-13",
-        "areaM2": 0,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-14",
-        "code": "L-14",
-        "areaM2": 0,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-15",
-        "code": "L-15",
-        "areaM2": 0,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-16",
-        "code": "L-16",
-        "areaM2": 0,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-17",
-        "code": "L-17",
-        "areaM2": 0,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-18",
-        "code": "L-18",
-        "areaM2": 0,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-19",
-        "code": "L-19",
-        "areaM2": 0,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-20",
-        "code": "L-20",
-        "areaM2": 0,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-21",
-        "code": "L-21",
-        "areaM2": 0,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-22",
-        "code": "L-22",
-        "areaM2": 0,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-23",
-        "code": "L-23",
-        "areaM2": 0,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-24",
-        "code": "L-24",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-25",
-        "code": "L-25",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-26",
-        "code": "L-26",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-27",
-        "code": "L-27",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-28",
-        "code": "L-28",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-29",
-        "code": "L-29",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-30",
-        "code": "L-30",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-31",
-        "code": "L-31",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-32",
-        "code": "L-32",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-33",
-        "code": "L-33",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-34",
-        "code": "L-34",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-35",
-        "code": "L-35",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-36",
-        "code": "L-36",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-37",
-        "code": "L-37",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-38",
-        "code": "L-38",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-39",
-        "code": "L-39",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-40",
-        "code": "L-40",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-41",
-        "code": "L-41",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-42",
-        "code": "L-42",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-43",
-        "code": "L-43",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-44",
-        "code": "L-44",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-45",
-        "code": "L-45",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-46",
-        "code": "L-46",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-47",
-        "code": "L-47",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-48",
-        "code": "L-48",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-49",
-        "code": "L-49",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-50",
-        "code": "L-50",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-51",
-        "code": "L-51",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-52",
-        "code": "L-52",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-53",
-        "code": "L-53",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-54",
-        "code": "L-54",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-55",
-        "code": "L-55",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-56",
-        "code": "L-56",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-57",
-        "code": "L-57",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-58",
-        "code": "L-58",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-59",
-        "code": "L-59",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-60",
-        "code": "L-60",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    },
-    {
-        "id": "L-61",
-        "code": "L-61",
-        "areaM2": 1250,
-        "priceUsd": 0,
-        "status": "AVAILABLE",
-        "polygon": []
-    }
+  {
+    "id": "L-01",
+    "code": "Lote 1",
+    "areaM2": 0,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1717,
+        4184
+      ],
+      [
+        1701,
+        4282
+      ],
+      [
+        1484,
+        4256
+      ],
+      [
+        1496,
+        4152
+      ]
+    ]
+  },
+  {
+    "id": "L-02",
+    "code": "Lote 2",
+    "areaM2": 0,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1739,
+        4049
+      ],
+      [
+        1724,
+        4154
+      ],
+      [
+        1503,
+        4123
+      ],
+      [
+        1516,
+        4025
+      ]
+    ]
+  },
+  {
+    "id": "L-03",
+    "code": "Lote 3",
+    "areaM2": 0,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1759,
+        3919
+      ],
+      [
+        1743,
+        4029
+      ],
+      [
+        1521,
+        3998
+      ],
+      [
+        1535,
+        3893
+      ]
+    ]
+  },
+  {
+    "id": "L-04",
+    "code": "Lote 4",
+    "areaM2": 0,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1777,
+        3784
+      ],
+      [
+        1759,
+        3907
+      ],
+      [
+        1537,
+        3873
+      ],
+      [
+        1559,
+        3760
+      ]
+    ]
+  },
+  {
+    "id": "L-05",
+    "code": "Lote 5",
+    "areaM2": 0,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1793,
+        3657
+      ],
+      [
+        1780,
+        3762
+      ],
+      [
+        1564,
+        3734
+      ],
+      [
+        1576,
+        3637
+      ]
+    ]
+  },
+  {
+    "id": "L-06",
+    "code": "Lote 6",
+    "areaM2": 0,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1810,
+        3540
+      ],
+      [
+        1796,
+        3648
+      ],
+      [
+        1578,
+        3617
+      ],
+      [
+        1594,
+        3525
+      ]
+    ]
+  },
+  {
+    "id": "L-07",
+    "code": "Lote 7",
+    "areaM2": 0,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1824,
+        3410
+      ],
+      [
+        1810,
+        3516
+      ],
+      [
+        1598,
+        3496
+      ],
+      [
+        1616,
+        3384
+      ]
+    ]
+  },
+  {
+    "id": "L-08",
+    "code": "Lote 8",
+    "areaM2": 0,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1841,
+        3283
+      ],
+      [
+        1829,
+        3391
+      ],
+      [
+        1622,
+        3355
+      ],
+      [
+        1630,
+        3263
+      ]
+    ]
+  },
+  {
+    "id": "L-09",
+    "code": "Lote 9",
+    "areaM2": 0,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1857,
+        3161
+      ],
+      [
+        1844,
+        3264
+      ],
+      [
+        1632,
+        3237
+      ],
+      [
+        1643,
+        3140
+      ]
+    ]
+  },
+  {
+    "id": "L-10",
+    "code": "Lote 10",
+    "areaM2": 0,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1872,
+        3041
+      ],
+      [
+        1862,
+        3132
+      ],
+      [
+        1649,
+        3112
+      ],
+      [
+        1658,
+        3015
+      ]
+    ]
+  },
+  {
+    "id": "L-11",
+    "code": "Lote 11",
+    "areaM2": 0,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1899,
+        2869
+      ],
+      [
+        1875,
+        3004
+      ],
+      [
+        1661,
+        2976
+      ],
+      [
+        1681,
+        2847
+      ]
+    ]
+  },
+  {
+    "id": "L-12",
+    "code": "Lote 12",
+    "areaM2": 0,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1908,
+        2752
+      ],
+      [
+        1899,
+        2852
+      ],
+      [
+        1681,
+        2821
+      ],
+      [
+        1692,
+        2725
+      ]
+    ]
+  },
+  {
+    "id": "L-13",
+    "code": "Lote 13",
+    "areaM2": 0,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1924,
+        2636
+      ],
+      [
+        1912,
+        2726
+      ],
+      [
+        1695,
+        2703
+      ],
+      [
+        1711,
+        2604
+      ]
+    ]
+  },
+  {
+    "id": "L-14",
+    "code": "Lote 14",
+    "areaM2": 0,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1938,
+        2511
+      ],
+      [
+        1926,
+        2612
+      ],
+      [
+        1714,
+        2582
+      ],
+      [
+        1723,
+        2486
+      ]
+    ]
+  },
+  {
+    "id": "L-15",
+    "code": "Lote 15",
+    "areaM2": 0,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1953,
+        2396
+      ],
+      [
+        1942,
+        2488
+      ],
+      [
+        1732,
+        2458
+      ],
+      [
+        1741,
+        2368
+      ]
+    ]
+  },
+  {
+    "id": "L-16",
+    "code": "Lote 16",
+    "areaM2": 0,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1972,
+        2252
+      ],
+      [
+        1960,
+        2362
+      ],
+      [
+        1745,
+        2333
+      ],
+      [
+        1760,
+        2224
+      ]
+    ]
+  },
+  {
+    "id": "L-17",
+    "code": "Lote 17",
+    "areaM2": 0,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1994,
+        2114
+      ],
+      [
+        1980,
+        2226
+      ],
+      [
+        1762,
+        2199
+      ],
+      [
+        1777,
+        2087
+      ]
+    ]
+  },
+  {
+    "id": "L-18",
+    "code": "Lote 18",
+    "areaM2": 0,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        2011,
+        1984
+      ],
+      [
+        1997,
+        2091
+      ],
+      [
+        1786,
+        2062
+      ],
+      [
+        1798,
+        1960
+      ]
+    ]
+  },
+  {
+    "id": "L-19",
+    "code": "Lote 19",
+    "areaM2": 0,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        2030,
+        1860
+      ],
+      [
+        2015,
+        1967
+      ],
+      [
+        1801,
+        1943
+      ],
+      [
+        1813,
+        1840
+      ]
+    ]
+  },
+  {
+    "id": "L-20",
+    "code": "Lote 20",
+    "areaM2": 0,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        2042,
+        1722
+      ],
+      [
+        2030,
+        1842
+      ],
+      [
+        1817,
+        1814
+      ],
+      [
+        1835,
+        1694
+      ]
+    ]
+  },
+  {
+    "id": "L-21",
+    "code": "Lote 21",
+    "areaM2": 0,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        2066,
+        1602
+      ],
+      [
+        2049,
+        1701
+      ],
+      [
+        1837,
+        1671
+      ],
+      [
+        1845,
+        1578
+      ]
+    ]
+  },
+  {
+    "id": "L-22",
+    "code": "Lote 22",
+    "areaM2": 0,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        2077,
+        1485
+      ],
+      [
+        2065,
+        1586
+      ],
+      [
+        1845,
+        1557
+      ],
+      [
+        1859,
+        1454
+      ]
+    ]
+  },
+  {
+    "id": "L-23",
+    "code": "Lote 23",
+    "areaM2": 0,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        2097,
+        1357
+      ],
+      [
+        2081,
+        1461
+      ],
+      [
+        1863,
+        1436
+      ],
+      [
+        1879,
+        1329
+      ]
+    ]
+  },
+  {
+    "id": "L-24",
+    "code": "Lote 24",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        2112,
+        1232
+      ],
+      [
+        2102,
+        1341
+      ],
+      [
+        1886,
+        1310
+      ],
+      [
+        1891,
+        1209
+      ]
+    ]
+  },
+  {
+    "id": "L-25",
+    "code": "Lote 25",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        2130,
+        1121
+      ],
+      [
+        2119,
+        1212
+      ],
+      [
+        1897,
+        1190
+      ],
+      [
+        1910,
+        1100
+      ]
+    ]
+  },
+  {
+    "id": "L-26",
+    "code": "Lote 26",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        2145,
+        986
+      ],
+      [
+        2133,
+        1095
+      ],
+      [
+        1917,
+        1071
+      ],
+      [
+        1925,
+        963
+      ]
+    ]
+  },
+  {
+    "id": "L-27",
+    "code": "Lote 27",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        2159,
+        874
+      ],
+      [
+        2150,
+        967
+      ],
+      [
+        1927,
+        940
+      ],
+      [
+        1941,
+        851
+      ]
+    ]
+  },
+  {
+    "id": "L-28",
+    "code": "Lote 28",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        2178,
+        738
+      ],
+      [
+        2167,
+        845
+      ],
+      [
+        1945,
+        820
+      ],
+      [
+        1955,
+        717
+      ]
+    ]
+  },
+  {
+    "id": "L-29",
+    "code": "Lote 29",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        2193,
+        615
+      ],
+      [
+        2182,
+        717
+      ],
+      [
+        1960,
+        695
+      ],
+      [
+        1969,
+        602
+      ]
+    ]
+  },
+  {
+    "id": "L-30",
+    "code": "Lote 30",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        2208,
+        493
+      ],
+      [
+        2197,
+        595
+      ],
+      [
+        1973,
+        573
+      ],
+      [
+        1984,
+        474
+      ]
+    ]
+  },
+  {
+    "id": "L-31",
+    "code": "Lote 31",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        2222,
+        373
+      ],
+      [
+        2213,
+        471
+      ],
+      [
+        1989,
+        451
+      ],
+      [
+        1997,
+        348
+      ]
+    ]
+  },
+  {
+    "id": "L-32",
+    "code": "Lote 32",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        2240,
+        248
+      ],
+      [
+        2228,
+        349
+      ],
+      [
+        2002,
+        327
+      ],
+      [
+        2014,
+        232
+      ]
+    ]
+  },
+  {
+    "id": "L-33",
+    "code": "Lote 33",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        2249,
+        127
+      ],
+      [
+        2245,
+        218
+      ],
+      [
+        2019,
+        211
+      ],
+      [
+        2021,
+        114
+      ]
+    ]
+  },
+  {
+    "id": "L-34",
+    "code": "Lote 34",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1361,
+        4147
+      ],
+      [
+        1353,
+        4247
+      ],
+      [
+        1116,
+        4207
+      ],
+      [
+        1132,
+        4121
+      ]
+    ]
+  },
+  {
+    "id": "L-35",
+    "code": "Lote 35",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1382,
+        4021
+      ],
+      [
+        1366,
+        4124
+      ],
+      [
+        1138,
+        4106
+      ],
+      [
+        1150,
+        3989
+      ]
+    ]
+  },
+  {
+    "id": "L-36",
+    "code": "Lote 36",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1388,
+        3887
+      ],
+      [
+        1399,
+        3887
+      ],
+      [
+        1380,
+        4003
+      ],
+      [
+        1152,
+        3972
+      ],
+      [
+        1168,
+        3863
+      ]
+    ]
+  },
+  {
+    "id": "L-37",
+    "code": "Lote 37",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1416,
+        3751
+      ],
+      [
+        1398,
+        3878
+      ],
+      [
+        1174,
+        3843
+      ],
+      [
+        1182,
+        3730
+      ]
+    ]
+  },
+  {
+    "id": "L-38",
+    "code": "Lote 38",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1427,
+        3622
+      ],
+      [
+        1413,
+        3727
+      ],
+      [
+        1186,
+        3706
+      ],
+      [
+        1205,
+        3597
+      ]
+    ]
+  },
+  {
+    "id": "L-39",
+    "code": "Lote 39",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1443,
+        3497
+      ],
+      [
+        1426,
+        3599
+      ],
+      [
+        1210,
+        3577
+      ],
+      [
+        1222,
+        3468
+      ]
+    ]
+  },
+  {
+    "id": "L-40",
+    "code": "Lote 40",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1461,
+        3376
+      ],
+      [
+        1449,
+        3479
+      ],
+      [
+        1230,
+        3448
+      ],
+      [
+        1241,
+        3351
+      ]
+    ]
+  },
+  {
+    "id": "L-41",
+    "code": "Lote 41",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1478,
+        3257
+      ],
+      [
+        1468,
+        3352
+      ],
+      [
+        1246,
+        3332
+      ],
+      [
+        1257,
+        3228
+      ]
+    ]
+  },
+  {
+    "id": "L-42",
+    "code": "Lote 42",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1498,
+        3131
+      ],
+      [
+        1484,
+        3233
+      ],
+      [
+        1260,
+        3208
+      ],
+      [
+        1274,
+        3095
+      ]
+    ]
+  },
+  {
+    "id": "L-43",
+    "code": "Lote 43",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1511,
+        3005
+      ],
+      [
+        1497,
+        3107
+      ],
+      [
+        1279,
+        3077
+      ],
+      [
+        1293,
+        2969
+      ]
+    ]
+  },
+  {
+    "id": "L-44",
+    "code": "Lote 44",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1530,
+        2868
+      ],
+      [
+        1517,
+        2979
+      ],
+      [
+        1293,
+        2949
+      ],
+      [
+        1310,
+        2841
+      ]
+    ]
+  },
+  {
+    "id": "L-45",
+    "code": "Lote 45",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1548,
+        2733
+      ],
+      [
+        1531,
+        2846
+      ],
+      [
+        1318,
+        2826
+      ],
+      [
+        1332,
+        2703
+      ]
+    ]
+  },
+  {
+    "id": "L-46",
+    "code": "Lote 46",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1567,
+        2604
+      ],
+      [
+        1555,
+        2711
+      ],
+      [
+        1336,
+        2689
+      ],
+      [
+        1352,
+        2584
+      ]
+    ]
+  },
+  {
+    "id": "L-47",
+    "code": "Lote 47",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1580,
+        2481
+      ],
+      [
+        1567,
+        2583
+      ],
+      [
+        1356,
+        2558
+      ],
+      [
+        1370,
+        2458
+      ]
+    ]
+  },
+  {
+    "id": "L-48",
+    "code": "Lote 48",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1599,
+        2359
+      ],
+      [
+        1586,
+        2468
+      ],
+      [
+        1376,
+        2443
+      ],
+      [
+        1389,
+        2338
+      ]
+    ]
+  },
+  {
+    "id": "L-49",
+    "code": "Lote 49",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1615,
+        2232
+      ],
+      [
+        1601,
+        2341
+      ],
+      [
+        1393,
+        2320
+      ],
+      [
+        1405,
+        2205
+      ]
+    ]
+  },
+  {
+    "id": "L-50",
+    "code": "Lote 50",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1635,
+        2099
+      ],
+      [
+        1616,
+        2211
+      ],
+      [
+        1408,
+        2187
+      ],
+      [
+        1418,
+        2075
+      ]
+    ]
+  },
+  {
+    "id": "L-51",
+    "code": "Lote 51",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1650,
+        1950
+      ],
+      [
+        1636,
+        2077
+      ],
+      [
+        1425,
+        2050
+      ],
+      [
+        1444,
+        1926
+      ]
+    ]
+  },
+  {
+    "id": "L-52",
+    "code": "Lote 52",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1666,
+        1840
+      ],
+      [
+        1652,
+        1931
+      ],
+      [
+        1449,
+        1908
+      ],
+      [
+        1460,
+        1812
+      ]
+    ]
+  },
+  {
+    "id": "L-53",
+    "code": "Lote 53",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1684,
+        1719
+      ],
+      [
+        1670,
+        1819
+      ],
+      [
+        1462,
+        1795
+      ],
+      [
+        1469,
+        1703
+      ]
+    ]
+  },
+  {
+    "id": "L-54",
+    "code": "Lote 54",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1701,
+        1592
+      ],
+      [
+        1684,
+        1699
+      ],
+      [
+        1472,
+        1679
+      ],
+      [
+        1484,
+        1572
+      ]
+    ]
+  },
+  {
+    "id": "L-55",
+    "code": "Lote 55",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1717,
+        1465
+      ],
+      [
+        1702,
+        1569
+      ],
+      [
+        1490,
+        1553
+      ],
+      [
+        1502,
+        1447
+      ]
+    ]
+  },
+  {
+    "id": "L-56",
+    "code": "Lote 56",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1731,
+        1346
+      ],
+      [
+        1719,
+        1445
+      ],
+      [
+        1502,
+        1427
+      ],
+      [
+        1512,
+        1333
+      ]
+    ]
+  },
+  {
+    "id": "L-57",
+    "code": "Lote 57",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1749,
+        1226
+      ],
+      [
+        1736,
+        1326
+      ],
+      [
+        1517,
+        1307
+      ],
+      [
+        1527,
+        1206
+      ]
+    ]
+  },
+  {
+    "id": "L-58",
+    "code": "Lote 58",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1764,
+        1107
+      ],
+      [
+        1752,
+        1208
+      ],
+      [
+        1528,
+        1189
+      ],
+      [
+        1541,
+        1088
+      ]
+    ]
+  },
+  {
+    "id": "L-59",
+    "code": "Lote 59",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1778,
+        983
+      ],
+      [
+        1764,
+        1090
+      ],
+      [
+        1549,
+        1073
+      ],
+      [
+        1562,
+        971
+      ]
+    ]
+  },
+  {
+    "id": "L-60",
+    "code": "Lote 60",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1796,
+        865
+      ],
+      [
+        1782,
+        965
+      ],
+      [
+        1564,
+        954
+      ],
+      [
+        1578,
+        846
+      ]
+    ]
+  },
+  {
+    "id": "L-61",
+    "code": "Lote 61",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1804,
+        739
+      ],
+      [
+        1794,
+        839
+      ],
+      [
+        1584,
+        827
+      ],
+      [
+        1594,
+        721
+      ]
+    ]
+  },
+  {
+    "id": "L-62",
+    "code": "Lote 62",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1822,
+        625
+      ],
+      [
+        1810,
+        722
+      ],
+      [
+        1593,
+        705
+      ],
+      [
+        1601,
+        613
+      ]
+    ]
+  },
+  {
+    "id": "L-63",
+    "code": "Lote 63",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1838,
+        510
+      ],
+      [
+        1823,
+        602
+      ],
+      [
+        1612,
+        590
+      ],
+      [
+        1628,
+        490
+      ]
+    ]
+  },
+  {
+    "id": "L-64",
+    "code": "Lote 64",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1855,
+        381
+      ],
+      [
+        1836,
+        484
+      ],
+      [
+        1627,
+        473
+      ],
+      [
+        1631,
+        364
+      ]
+    ]
+  },
+  {
+    "id": "L-65",
+    "code": "Lote 65",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1872,
+        254
+      ],
+      [
+        1859,
+        351
+      ],
+      [
+        1637,
+        335
+      ],
+      [
+        1647,
+        228
+      ]
+    ]
+  },
+  {
+    "id": "L-66",
+    "code": "Lote 66",
+    "areaM2": 1250,
+    "priceUsd": 0,
+    "status": "AVAILABLE",
+    "polygon": [
+      [
+        1889,
+        99
+      ],
+      [
+        1871,
+        227
+      ],
+      [
+        1650,
+        211
+      ],
+      [
+        1662,
+        68
+      ]
+    ]
+  }
 ]

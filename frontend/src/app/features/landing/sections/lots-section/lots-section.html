@@ -70,7 +70,7 @@
 
         <!-- ✅ MAPA solo cuando corresponde -->
         @if (tab() === 'map') {
-        <landing-lots-map [lots]="filteredLots()" [selected]="selected()" (selectLot)="selected.set($event)">
+        <landing-lots-map [lots]="lots()" [selected]="selected()" (selectLot)="selected.set($event)">
         </landing-lots-map>
         }
     </div>

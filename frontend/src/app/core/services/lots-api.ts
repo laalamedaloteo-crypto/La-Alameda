@@ -19,11 +19,18 @@ export interface Lot {
 export class LotsApiService {
   private readonly apiUrl = `${environment.apiUrl}/lots`;
   private readonly assetsUrl = '/assets/data/lots.json';
+  // Temporal: durante redibujo de masterplan usamos siempre el JSON local.
+  private readonly forceAssetsLots = false;
 
   constructor(private http: HttpClient) { }
 
   listLots(): Observable<Lot[]> {
     const headers = { 'Cache-Control': 'no-cache', 'Pragma': 'no-cache' };
+
+    if (this.forceAssetsLots) {
+      return this.http.get<Lot[]>(this.assetsUrl, { headers });
+    }
+
     return this.http.get<Lot[]>(this.apiUrl, { headers }).pipe(
       catchError((err) => {
         console.warn('⚠️ API fetch failed, falling back to static JSON:', err.status);
