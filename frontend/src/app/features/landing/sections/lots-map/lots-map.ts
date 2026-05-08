@@ -51,9 +51,10 @@ export class LotsMap implements OnChanges, OnDestroy {
     crs: L.CRS.Simple,
     zoomControl: false,
     attributionControl: false,
-    minZoom: -1,
+    minZoom: -4,
     maxZoom: 4,
     zoom: 0,
+    zoomSnap: 0, // Permite niveles de zoom decimales para encajar perfectamente
     center: L.latLng(this.IMG_H / 2, this.IMG_W / 2),
   };
 
@@ -77,9 +78,28 @@ export class LotsMap implements OnChanges, OnDestroy {
   onMapReady(map: L.Map) {
     this.map = map;
 
+    // Al usar una línea con altura cero (solo ancho), obligamos a Leaflet
+    // a encajar la imagen basado en el ancho del contenedor en lugar del alto.
+    const fitWidthBounds = L.latLngBounds(
+      [this.IMG_H / 2, 0],
+      [this.IMG_H / 2, this.IMG_W]
+    );
+
+    // Asegurar que el contenedor calculó su tamaño final antes de ajustar
+    setTimeout(() => {
+      map.invalidateSize();
+      map.fitBounds(fitWidthBounds);
+    }, 100);
+
     if (!this.overlay) {
       this.overlay = L.imageOverlay(this.imgUrl, this.bounds, { opacity: 1 }).addTo(map);
-      map.fitBounds(this.bounds);
+
+      // Ajustar bounds justo después de que la imagen carga
+      this.overlay.on('load', () => {
+        map.invalidateSize();
+        map.fitBounds(fitWidthBounds);
+      });
+
       map.setMaxBounds(this.bounds.pad(0.06));
     }
 
@@ -124,28 +144,19 @@ export class LotsMap implements OnChanges, OnDestroy {
   private renderLots() {
     if (!this.map || !this.drawnGroup) return;
 
+    // 1. Ciclo de Limpieza: Removemos todas las capas del grupo visual
+    this.drawnGroup.clearLayers();
+
     this.lotById = new Map(this.lots.map((l) => [l.id, l]));
 
-    // ids visibles según la lista que llega (filtrada)
-    const visibleIds = new Set<string>();
-
+    // 2. Sincronización y Renderizado Condicional: Solo iteramos la lista filtrada
     for (const lot of this.lots) {
       const polyData = this.draftById.get(lot.id) ?? lot.polygon ?? [];
       const hasPoly = polyData.length > 0;
 
-      const existing = this.layerById.get(lot.id);
+      if (!hasPoly) continue;
 
-      if (!hasPoly) {
-        // si no tiene polígono, ocultamos si estaba
-        if (existing && this.drawnGroup.hasLayer(existing)) {
-          this.drawnGroup.removeLayer(existing);
-        }
-        continue;
-      }
-
-      visibleIds.add(lot.id);
-
-      let layer = existing;
+      let layer = this.layerById.get(lot.id);
 
       if (!layer) {
         layer = L.polygon(
@@ -181,21 +192,21 @@ export class LotsMap implements OnChanges, OnDestroy {
         }
       }
 
-      // asegurar que esté en el group visible/editable
-      if (!this.drawnGroup.hasLayer(layer)) {
-        this.drawnGroup.addLayer(layer);
-      }
+      // Añadimos el layer visible
+      this.drawnGroup.addLayer(layer);
 
       // estilos por estado + seleccionado
       this.applyLotStyle(layer, lot, lot.id === this.selected?.id);
     }
 
-    // remover del group los layers que no están en la lista visible actual
-    this.layerById.forEach((layer, id) => {
-      if (!visibleIds.has(id) && this.drawnGroup!.hasLayer(layer)) {
-        this.drawnGroup!.removeLayer(layer);
-      }
-    });
+    // 3. Persistencia de la Vista: Si la lista filtrada queda vacía, reseteamos la vista a todo el mapa
+    if (this.lots.length === 0) {
+      const fitWidthBounds = L.latLngBounds(
+        [this.IMG_H / 2, 0],
+        [this.IMG_H / 2, this.IMG_W]
+      );
+      this.map.fitBounds(fitWidthBounds);
+    }
 
     this.highlightSelected(this.selected?.id ?? null);
   }
