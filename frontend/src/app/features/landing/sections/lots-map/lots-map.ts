@@ -55,6 +55,8 @@ export class LotsMap implements OnChanges, OnDestroy {
     maxZoom: 4,
     zoom: 0,
     zoomSnap: 0, // Permite niveles de zoom decimales para encajar perfectamente
+    zoomDelta: 0.001, // Zoom más suave y gradual por cada paso de rueda
+    wheelPxPerZoomLevel: 10, // Sensibilidad de la rueda del ratón
     center: L.latLng(this.IMG_H / 2, this.IMG_W / 2),
   };
 
@@ -89,6 +91,8 @@ export class LotsMap implements OnChanges, OnDestroy {
     setTimeout(() => {
       map.invalidateSize();
       map.fitBounds(fitWidthBounds);
+      // Bloquear el zoom out más allá de esta vista inicial
+      map.setMinZoom(map.getZoom());
     }, 100);
 
     if (!this.overlay) {
@@ -98,6 +102,7 @@ export class LotsMap implements OnChanges, OnDestroy {
       this.overlay.on('load', () => {
         map.invalidateSize();
         map.fitBounds(fitWidthBounds);
+        map.setMinZoom(map.getZoom());
       });
 
       map.setMaxBounds(this.bounds.pad(0.06));
@@ -228,12 +233,12 @@ export class LotsMap implements OnChanges, OnDestroy {
     const s = this.statusStyle(lot.status);
 
     layer.setStyle({
-      color: selected ? 'rgba(212,175,55,0.98)' : s.stroke,
-      weight: selected ? 4 : 3,
-      dashArray: selected ? undefined : s.dashArray,
+      stroke: selected, // Solo mostrar borde si está seleccionado
+      color: selected ? 'rgba(212,175,55,0.98)' : undefined,
+      weight: selected ? 4 : 0,
+      dashArray: undefined,
       fillColor: s.fill,
       fillOpacity: selected ? Math.min(0.75, s.fillOpacity + 0.20) : s.fillOpacity,
-      opacity: 0.98,
     });
 
     // ✅ clases para glow por status (actualiza si cambia status)
@@ -250,30 +255,30 @@ export class LotsMap implements OnChanges, OnDestroy {
     switch (status) {
       case 'AVAILABLE':
         return {
-          stroke: 'rgba(46, 204, 113, 0.95)',   // verde visible
-          fill: 'rgba(46, 204, 113, 0.42)',
-          fillOpacity: 0.40,
+          stroke: 'rgba(46, 204, 113, 0.50)',   // verde visible
+          fill: 'rgba(46, 204, 113, 0.25)',
+          fillOpacity: 0.60,
           dashArray: undefined,
         };
       case 'RESERVED':
         return {
-          stroke: 'rgba(241, 196, 15, 0.98)',   // ámbar
-          fill: 'rgba(241, 196, 15, 0.36)',
-          fillOpacity: 0.34,
+          stroke: 'rgba(241, 196, 15, 0.50)',   // ámbar
+          fill: 'rgba(241, 196, 15, 0.20)',
+          fillOpacity: 0.90,
           dashArray: '10 6',                    // dashed
         };
       case 'SOLD':
         return {
-          stroke: 'rgba(231, 76, 60, 0.95)',    // rojo
-          fill: 'rgba(231, 76, 60, 0.22)',
-          fillOpacity: 0.20,
+          stroke: 'rgba(231, 76, 60, 0.50)',    // rojo
+          fill: 'rgba(231, 76, 60, 0.15)',
+          fillOpacity: 0.90,
           dashArray: '3 8',                     // dotted-ish
         };
       default:
         return {
-          stroke: 'rgba(200, 180, 138, 0.70)',
-          fill: 'rgba(200, 180, 138, 0.20)',
-          fillOpacity: 0.18,
+          stroke: 'rgba(200, 180, 138, 0.40)',
+          fill: 'rgba(200, 180, 138, 0.15)',
+          fillOpacity: 0.15,
           dashArray: undefined,
         };
     }
