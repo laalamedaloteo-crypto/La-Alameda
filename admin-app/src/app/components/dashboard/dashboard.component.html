@@ -22,11 +22,8 @@
     </header>
 
     <main class="content">
-        <!-- Loading -->
-        <div *ngIf="loading" class="state">Cargando lotes…</div>
-
         <!-- Error -->
-        <div *ngIf="!loading && error" class="state">
+        <div *ngIf="error" class="state">
             <div class="state-card">
                 <p class="state-title">Ocurrió un error</p>
                 <p class="state-text">{{ error }}</p>
@@ -34,7 +31,7 @@
             </div>
         </div>
 
-        <ng-container *ngIf="!loading && !error">
+        <ng-container *ngIf="!error">
             <!-- KPIs -->
             <section class="kpis">
                 <div class="kpi clickable" [class.active]="statusFilter === 'ALL'" (click)="setStatusFilter('ALL')">
@@ -76,8 +73,16 @@
                 <span class="results">{{ filteredLots.length }} resultados</span>
             </section>
 
+            <!-- Loading Grid -->
+            <section *ngIf="loading" class="state">
+                <div class="state-card">
+                    <p class="state-title">Cargando lotes…</p>
+                    <p class="state-text">Por favor, esperá un momento.</p>
+                </div>
+            </section>
+
             <!-- Empty -->
-            <section *ngIf="filteredLots.length === 0" class="state">
+            <section *ngIf="!loading && filteredLots.length === 0" class="state">
                 <div class="state-card">
                     <p class="state-title">No hay resultados</p>
                     <p class="state-text">Probá otra búsqueda o cambiá el filtro.</p>
@@ -86,7 +91,7 @@
             </section>
 
             <!-- Grid -->
-            <section *ngIf="filteredLots.length > 0" class="grid">
+            <section *ngIf="!loading && filteredLots.length > 0" class="grid">
                 <article *ngFor="let lot of filteredLots; trackBy: trackById" class="card"
                     [routerLink]="['/lot', lot.id]">
                     <div class="card-head">

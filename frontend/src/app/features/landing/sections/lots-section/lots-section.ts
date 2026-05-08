@@ -19,6 +19,7 @@ type Filter = 'ALL' | LotStatus;
 export class LotsSection {
     lots = signal<Lot[]>([]);
     selected = signal<Lot | null>(null);
+    loading = signal<boolean>(true);
 
     tab = signal<Tab>('list');
     filter = signal<Filter>('ALL');
@@ -46,8 +47,12 @@ export class LotsSection {
         ).subscribe({
             next: (l) => {
                 this.lots.set(l);
+                this.loading.set(false);
             },
-            error: (err) => console.error('🔴 Error in lots polling subscription:', err)
+            error: (err) => {
+                console.error('🔴 Error in lots polling subscription:', err);
+                this.loading.set(false);
+            }
         });
     }
 
