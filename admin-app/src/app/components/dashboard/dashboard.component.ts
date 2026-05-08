@@ -48,7 +48,7 @@ export class DashboardComponent implements OnInit {
 
                 return matchesTerm && matchesStatus;
             })
-            .sort((a, b) => a.code.localeCompare(b.code));
+            .sort((a, b) => a.code.localeCompare(b.code, undefined, { numeric: true }));
     }
 
     get statusCounts() {
