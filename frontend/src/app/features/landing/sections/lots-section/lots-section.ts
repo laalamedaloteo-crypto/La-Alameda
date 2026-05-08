@@ -34,7 +34,7 @@ export class LotsSection {
         if (f !== 'ALL') arr = arr.filter((l) => l.status === f);
         if (q) arr = arr.filter((l) => l.code.toLowerCase().includes(q));
 
-        return [...arr].sort((a, b) => a.id.localeCompare(b.id));
+        return [...arr].sort((a, b) => a.code.localeCompare(b.code, undefined, { numeric: true }));
     });
 
     constructor(private api: LotsApiService) {

@@ -5,7 +5,7 @@
             <div class="logo">R</div>
             <div class="brand-text">
                 <h1>Panel de Control</h1>
-                <p>RealEstate Admin</p>
+                <p>Administrador de Lotes</p>
             </div>
         </div>
 
@@ -37,25 +37,27 @@
         <ng-container *ngIf="!loading && !error">
             <!-- KPIs -->
             <section class="kpis">
-                <div class="kpi">
+                <div class="kpi clickable" [class.active]="statusFilter === 'ALL'" (click)="setStatusFilter('ALL')">
                     <span class="kpi-label">Total</span>
                     <div class="kpi-value">{{ lots.length }}</div>
                     <p class="kpi-sub">Inventario cargado</p>
                 </div>
 
-                <div class="kpi">
+                <div class="kpi clickable" [class.active]="statusFilter === 'AVAILABLE'"
+                    (click)="setStatusFilter('AVAILABLE')">
                     <span class="kpi-label">Disponibles</span>
                     <div class="kpi-value kpi-ok">{{ statusCounts.available }}</div>
                     <p class="kpi-sub">Listos para vender</p>
                 </div>
 
-                <div class="kpi">
+                <div class="kpi clickable" [class.active]="statusFilter === 'RESERVED'"
+                    (click)="setStatusFilter('RESERVED')">
                     <span class="kpi-label">Reservados</span>
                     <div class="kpi-value kpi-warn">{{ statusCounts.reserved }}</div>
                     <p class="kpi-sub">En negociación</p>
                 </div>
 
-                <div class="kpi">
+                <div class="kpi clickable" [class.active]="statusFilter === 'SOLD'" (click)="setStatusFilter('SOLD')">
                     <span class="kpi-label">Vendidos</span>
                     <div class="kpi-value kpi-bad">{{ statusCounts.sold }}</div>
                     <p class="kpi-sub">Cerrados</p>
