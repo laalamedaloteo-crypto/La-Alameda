@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AutoLogoutService } from './services/auto-logout.service';
+import { GlobalLoadingModalComponent } from './components/global-loading-modal/global-loading-modal.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, GlobalLoadingModalComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

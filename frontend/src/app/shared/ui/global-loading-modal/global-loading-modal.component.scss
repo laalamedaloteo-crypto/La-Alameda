@@ -1,0 +1,156 @@
+.global-loading-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+
+  &.visible {
+    pointer-events: auto;
+    opacity: 1;
+  }
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  transition: background-color 0.3s ease;
+
+  &.error {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.modal-container {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  padding: 48px 32px;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: slideIn 0.3s ease;
+
+  @media (max-width: 640px) {
+    padding: 32px 24px;
+    max-width: 90%;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &.error-content {
+    gap: 24px;
+  }
+}
+
+.spinner-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #f0f0f0;
+  border-top-color: #1a73e8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.error-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+  color: #ea4335;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #202124;
+  margin: 0;
+  line-height: 1.4;
+
+  @media (max-width: 640px) {
+    font-size: 18px;
+  }
+}
+
+.modal-message {
+  font-size: 15px;
+  color: #5f6368;
+  margin: 0;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+}
+
+.modal-subtitle {
+  font-size: 14px;
+  color: #80868b;
+  margin: 0;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.btn-retry {
+  align-self: center;
+  padding: 10px 28px;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 12px;
+
+  &:hover {
+    background-color: #1557b0;
+    box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  @media (max-width: 640px) {
+    width: 100%;
+    padding: 12px 20px;
+  }
+}

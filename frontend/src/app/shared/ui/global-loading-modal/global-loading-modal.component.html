@@ -1,0 +1,32 @@
+<div
+  class="global-loading-modal"
+  [class.visible]="(globalLoading.isVisible() && !globalLoading.hasError()) || globalLoading.hasError()"
+>
+  <div class="modal-overlay" [class.error]="globalLoading.hasError()"></div>
+
+  <div class="modal-container">
+    <!-- Estado de carga -->
+    <div class="modal-content" *ngIf="!globalLoading.hasError()">
+      <div class="spinner-wrapper">
+        <div class="spinner"></div>
+      </div>
+      <h2 class="modal-title">Estamos preparando la información</h2>
+      <p class="modal-message">Estamos obteniendo todos los datos necesarios para que la página funcione correctamente. Por favor, esperá unos segundos.</p>
+      <p class="modal-subtitle">Gracias por tu paciencia.</p>
+    </div>
+
+    <!-- Estado de error -->
+    <div class="modal-content error-content" *ngIf="globalLoading.hasError()">
+      <div class="error-icon">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+      </div>
+      <h2 class="modal-title">No pudimos cargar la información</h2>
+      <p class="modal-message">{{ globalLoading.errorMessage() || 'Hubo un inconveniente al obtener los datos necesarios. Por favor, intentá nuevamente en unos segundos.' }}</p>
+      <button class="btn-retry" (click)="onRetry()">Reintentar</button>
+    </div>
+  </div>
+</div>
