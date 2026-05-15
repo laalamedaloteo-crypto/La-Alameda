@@ -55,8 +55,10 @@ export class LotsMap implements OnChanges, OnDestroy {
     maxZoom: 4,
     zoom: 0,
     zoomSnap: 0, // Permite niveles de zoom decimales para encajar perfectamente
-    zoomDelta: 0.001, // Zoom más suave y gradual por cada paso de rueda
-    wheelPxPerZoomLevel: 10, // Sensibilidad de la rueda del ratón
+    zoomDelta: 0.5, // Zoom más predecible
+    wheelPxPerZoomLevel: 60, // Sensibilidad de la rueda del ratón
+    maxBoundsViscosity: 1.0, // ESTRICTO: rebote bloqueado al borde, impide "desbordar" la imagen
+    bounceAtZoomLimits: false, // ESTRICTO: no permite zoom out más allá del minZoom
     center: L.latLng(this.IMG_H / 2, this.IMG_W / 2),
   };
 
@@ -77,22 +79,35 @@ export class LotsMap implements OnChanges, OnDestroy {
 
   private drawInited = false;
 
+  private onResize = () => {
+    // Si cambia el tamaño de la pantalla, recalculamos el zoom mínimo dinámico
+    if (this.map) {
+      this.map.setMinZoom(-10); // Liberamos el candado para re-calcular
+      this.initMapView();
+    }
+  };
+
+  private initMapView() {
+    if (!this.map) return;
+    this.map.invalidateSize();
+    
+    // 1. Zoom inicial para encajar perfectamente el aspect-ratio
+    this.map.fitBounds(this.bounds);
+    
+    // 2. Corrección de Zoom Mínimo Dinámico
+    const currentZoom = this.map.getZoom();
+    this.map.setMinZoom(currentZoom);
+    
+    // 3. Restricción de Bordes (Clamping absoluto)
+    this.map.setMaxBounds(this.bounds);
+  }
+
   onMapReady(map: L.Map) {
     this.map = map;
 
-    // Al usar una línea con altura cero (solo ancho), obligamos a Leaflet
-    // a encajar la imagen basado en el ancho del contenedor en lugar del alto.
-    const fitWidthBounds = L.latLngBounds(
-      [this.IMG_H / 2, 0],
-      [this.IMG_H / 2, this.IMG_W]
-    );
-
     // Asegurar que el contenedor calculó su tamaño final antes de ajustar
     setTimeout(() => {
-      map.invalidateSize();
-      map.fitBounds(fitWidthBounds);
-      // Bloquear el zoom out más allá de esta vista inicial
-      map.setMinZoom(map.getZoom());
+      this.initMapView();
     }, 100);
 
     if (!this.overlay) {
@@ -100,13 +115,12 @@ export class LotsMap implements OnChanges, OnDestroy {
 
       // Ajustar bounds justo después de que la imagen carga
       this.overlay.on('load', () => {
-        map.invalidateSize();
-        map.fitBounds(fitWidthBounds);
-        map.setMinZoom(map.getZoom());
+        this.initMapView();
       });
-
-      map.setMaxBounds(this.bounds.pad(0.06));
     }
+
+    // Escuchar cambios de resolución/rotación mobile
+    window.addEventListener('resize', this.onResize);
 
     if (!this.drawnGroup) {
       this.drawnGroup = new L.FeatureGroup();
@@ -140,6 +154,7 @@ export class LotsMap implements OnChanges, OnDestroy {
   }
 
   ngOnDestroy() {
+    window.removeEventListener('resize', this.onResize);
     this.map?.remove();
   }
 
@@ -206,11 +221,7 @@ export class LotsMap implements OnChanges, OnDestroy {
 
     // 3. Persistencia de la Vista: Si la lista filtrada queda vacía, reseteamos la vista a todo el mapa
     if (this.lots.length === 0) {
-      const fitWidthBounds = L.latLngBounds(
-        [this.IMG_H / 2, 0],
-        [this.IMG_H / 2, this.IMG_W]
-      );
-      this.map.fitBounds(fitWidthBounds);
+      this.map.fitBounds(this.bounds);
     }
 
     this.highlightSelected(this.selected?.id ?? null);
@@ -301,7 +312,12 @@ export class LotsMap implements OnChanges, OnDestroy {
   private focusLot(id: string) {
     const layer = this.layerById.get(id);
     if (!layer || !this.map) return;
-    this.map.fitBounds(layer.getBounds().pad(0.35), { animate: true });
+    
+    // Sincronización de Estado: Invalidate asegura que las dimensiones del canvas son correctas antes de animar.
+    this.map.invalidateSize();
+    
+    // Usamos animate false o duration 0.5 con padding moderado para prevenir bloqueos de cálculo de maxBounds
+    this.map.fitBounds(layer.getBounds().pad(0.35), { animate: true, maxZoom: 1 });
   }
 
   // -----------------------
