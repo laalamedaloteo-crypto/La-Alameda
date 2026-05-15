@@ -22,7 +22,7 @@ app.use(cors({
     origin: (origin, callback) => {
         // En desarrollo permitimos todo lo que venga de localhost
         const isLocalhost = !origin || origin.startsWith('http://localhost');
-        
+
         if (isLocalhost || allowedOrigins.includes(origin)) {
             callback(null, true);
         } else {
@@ -98,7 +98,7 @@ sequelize.sync({ alter: true })
     .then(async () => {
         console.log('Database connected and synced');
         await bootstrapAdmin();
-        
+
         // Sincronización automática de lotes (JSON -> DB)
         try {
             await syncLots();
