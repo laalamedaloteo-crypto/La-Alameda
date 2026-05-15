@@ -30,7 +30,7 @@ type LotLayer = L.Polygon & { __lotId?: string };
 export class LotsMap implements OnChanges, OnDestroy {
   @Input({ required: true }) lots: Lot[] = [];
   @Input() selected: Lot | null = null;
-  @Output() selectLot = new EventEmitter<Lot>();
+  @Output() selectLot = new EventEmitter<Lot | null>();
 
   openLot = signal<Lot | null>(null);
 
@@ -55,8 +55,10 @@ export class LotsMap implements OnChanges, OnDestroy {
     maxZoom: 4,
     zoom: 0,
     zoomSnap: 0, // Permite niveles de zoom decimales para encajar perfectamente
-    zoomDelta: 0.001, // Zoom más suave y gradual por cada paso de rueda
-    wheelPxPerZoomLevel: 10, // Sensibilidad de la rueda del ratón
+    zoomDelta: 0.5, // Zoom más predecible
+    wheelPxPerZoomLevel: 20, // Sensibilidad de la rueda del ratón (reducida para ser más rápido)
+    maxBoundsViscosity: 1.0, // ESTRICTO: rebote bloqueado al borde, impide "desbordar" la imagen
+    bounceAtZoomLimits: false, // ESTRICTO: no permite zoom out más allá del minZoom
     center: L.latLng(this.IMG_H / 2, this.IMG_W / 2),
   };
 
@@ -76,23 +78,50 @@ export class LotsMap implements OnChanges, OnDestroy {
   private lotById = new Map<string, Lot>();
 
   private drawInited = false;
+  private initialFitDone = false;
+
+  private onResize = () => {
+    // Si cambia el tamaño de la pantalla, recalculamos el zoom mínimo dinámico
+    if (this.map) {
+      this.map.setMinZoom(-10); // Liberamos el candado para re-calcular
+      this.initMapView();
+    }
+  };
+
+  private initMapView() {
+    if (!this.map) return;
+    this.map.invalidateSize();
+
+    // 1. Corrección de Zoom Mínimo Dinámico (Puro Math)
+    // getBoundsZoom calcula el zoom matemáticamente exacto sin modificar la cámara
+    // ni depender de un fitBounds previo que podría estar animándose
+    const calculatedMinZoom = this.map.getBoundsZoom(this.bounds, false);
+    this.map.setMinZoom(calculatedMinZoom);
+
+    // 2. Restricción de Bordes (Clamping absoluto)
+    this.map.setMaxBounds(this.bounds);
+
+    // 3. Encuadre inicial
+    // Solo encuadramos si no hemos hecho el encuadre inicial y si no hay un lote ya seleccionado
+    if (!this.initialFitDone && !this.selected?.id) {
+      this.map.fitBounds(this.bounds, { animate: false });
+      this.initialFitDone = true;
+    }
+  }
 
   onMapReady(map: L.Map) {
     this.map = map;
 
-    // Al usar una línea con altura cero (solo ancho), obligamos a Leaflet
-    // a encajar la imagen basado en el ancho del contenedor en lugar del alto.
-    const fitWidthBounds = L.latLngBounds(
-      [this.IMG_H / 2, 0],
-      [this.IMG_H / 2, this.IMG_W]
-    );
+    // Deseleccionar si clickeamos en el fondo del mapa
+    this.map.on('click', () => {
+      this.selectLot.emit(null);
+      this.openLot.set(null);
+      this.highlightSelected(null);
+    });
 
     // Asegurar que el contenedor calculó su tamaño final antes de ajustar
     setTimeout(() => {
-      map.invalidateSize();
-      map.fitBounds(fitWidthBounds);
-      // Bloquear el zoom out más allá de esta vista inicial
-      map.setMinZoom(map.getZoom());
+      this.initMapView();
     }, 100);
 
     if (!this.overlay) {
@@ -100,13 +129,12 @@ export class LotsMap implements OnChanges, OnDestroy {
 
       // Ajustar bounds justo después de que la imagen carga
       this.overlay.on('load', () => {
-        map.invalidateSize();
-        map.fitBounds(fitWidthBounds);
-        map.setMinZoom(map.getZoom());
+        this.initMapView();
       });
-
-      map.setMaxBounds(this.bounds.pad(0.06));
     }
+
+    // Escuchar cambios de resolución/rotación mobile
+    window.addEventListener('resize', this.onResize);
 
     if (!this.drawnGroup) {
       this.drawnGroup = new L.FeatureGroup();
@@ -140,6 +168,7 @@ export class LotsMap implements OnChanges, OnDestroy {
   }
 
   ngOnDestroy() {
+    window.removeEventListener('resize', this.onResize);
     this.map?.remove();
   }
 
@@ -169,6 +198,7 @@ export class LotsMap implements OnChanges, OnDestroy {
           {
             // class base para css/glow
             className: 'lot-path',
+            bubblingMouseEvents: false // Previene que el click llegue al mapa
           }
         ) as LotLayer;
 
@@ -206,11 +236,7 @@ export class LotsMap implements OnChanges, OnDestroy {
 
     // 3. Persistencia de la Vista: Si la lista filtrada queda vacía, reseteamos la vista a todo el mapa
     if (this.lots.length === 0) {
-      const fitWidthBounds = L.latLngBounds(
-        [this.IMG_H / 2, 0],
-        [this.IMG_H / 2, this.IMG_W]
-      );
-      this.map.fitBounds(fitWidthBounds);
+      this.map.fitBounds(this.bounds);
     }
 
     this.highlightSelected(this.selected?.id ?? null);
@@ -301,7 +327,12 @@ export class LotsMap implements OnChanges, OnDestroy {
   private focusLot(id: string) {
     const layer = this.layerById.get(id);
     if (!layer || !this.map) return;
-    this.map.fitBounds(layer.getBounds().pad(0.35), { animate: true });
+
+    // Sincronización de Estado: Invalidate asegura que las dimensiones del canvas son correctas antes de animar.
+    this.map.invalidateSize();
+
+    // Usamos animate false o duration 0.5 con padding moderado para prevenir bloqueos de cálculo de maxBounds
+    this.map.fitBounds(layer.getBounds().pad(0.35), { animate: true, maxZoom: 1 });
   }
 
   // -----------------------
@@ -345,6 +376,7 @@ export class LotsMap implements OnChanges, OnDestroy {
 
       layer.__lotId = lotId;
       layer.options.className = 'lot-path';
+      layer.options.bubblingMouseEvents = false;
 
       // guardamos coords
       const polygon = this.layerToPolygon(layer);

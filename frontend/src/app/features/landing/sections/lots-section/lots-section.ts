@@ -67,8 +67,10 @@ export class LotsSection {
 
 
 
-    onSelect(lot: Lot) {
+    onSelect(lot: Lot | null) {
         this.selected.set(lot);
-        this.tab.set('map');
+        if (lot) {
+            this.tab.set('map');
+        }
     }
 }
