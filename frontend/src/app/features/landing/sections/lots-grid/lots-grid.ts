@@ -15,9 +15,16 @@ export class LotsGrid {
   @Input({ required: true }) lots: Lot[] = [];
   @Input() selected: Lot | null = null;
 
-  @Output() selectLot = new EventEmitter<Lot>();
+  @Output() selectLot = new EventEmitter<Lot | null>();
 
   onClick(lot: Lot) {
     this.selectLot.emit(lot);
+  }
+
+  onBackgroundClick(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    if (!target.closest('lot-card')) {
+      this.selectLot.emit(null);
+    }
   }
 }
