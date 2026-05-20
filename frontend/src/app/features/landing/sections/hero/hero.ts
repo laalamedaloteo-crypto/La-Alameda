@@ -8,7 +8,7 @@ import { UiButton } from '../../../../shared/ui/button/button';
   styleUrl: './hero.scss',
 })
 export class Hero {
-  private phone = '5493446000000';
+  private phone = '5493446370409';
   whatsHref = `https://wa.me/${this.phone}?text=${encodeURIComponent(
     'Hola! Quisiera agendar una visita.'
   )}`;

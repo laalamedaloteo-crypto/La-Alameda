@@ -470,7 +470,7 @@ export class LotsMap implements OnChanges, OnDestroy {
     }
   }
 
-  private phone = '5493446000000';
+  private phone = '5493446370409';
   whatsLot(lot: Lot) {
     return `https://wa.me/${this.phone}?text=${encodeURIComponent(
       `Hola! Quiero consultar por ${lot.code} (${lot.areaM2}m²).`
