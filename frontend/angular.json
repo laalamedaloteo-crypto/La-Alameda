@@ -27,6 +27,11 @@
             "assets": [
               "src/assets",
               {
+                "glob": "icono.png",
+                "input": ".",
+                "output": "/"
+              },
+              {
                 "glob": "**/*",
                 "input": "public"
               }

@@ -16,7 +16,7 @@ export class LotCard {
   @Input() active = false;
   @Output() select = new EventEmitter<Lot>();
 
-  private phone = '5493446000000';
+  private phone = '5493446370409';
 
   get whatsHref() {
     return `https://wa.me/${this.phone}?text=${encodeURIComponent(

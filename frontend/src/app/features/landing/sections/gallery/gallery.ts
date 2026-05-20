@@ -86,6 +86,9 @@ export class Gallery {
   }
 
   onWheel(event: WheelEvent) {
+    event.preventDefault();
+    event.stopPropagation();
+
     // Only handle horizontal or vertical scroll if diff > threshold
     if (Math.abs(event.deltaX) < 15 && Math.abs(event.deltaY) < 15) return;
 
