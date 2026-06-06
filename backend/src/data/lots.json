@@ -1,32 +1,7 @@
 [
   {
-    "id": "L-01",
-    "code": "Lote 1",
-    "areaM2": 0,
-    "priceUsd": 0,
-    "status": "AVAILABLE",
-    "polygon": [
-      [
-        1717,
-        4184
-      ],
-      [
-        1701,
-        4282
-      ],
-      [
-        1484,
-        4256
-      ],
-      [
-        1496,
-        4152
-      ]
-    ]
-  },
-  {
-    "id": "L-02",
-    "code": "Lote 2",
+    "id": "L-31",
+    "code": "Lote 31",
     "areaM2": 0,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -50,8 +25,8 @@
     ]
   },
   {
-    "id": "L-03",
-    "code": "Lote 3",
+    "id": "L-30",
+    "code": "Lote 30",
     "areaM2": 0,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -75,8 +50,8 @@
     ]
   },
   {
-    "id": "L-04",
-    "code": "Lote 4",
+    "id": "L-29",
+    "code": "Lote 29",
     "areaM2": 0,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -100,8 +75,8 @@
     ]
   },
   {
-    "id": "L-05",
-    "code": "Lote 5",
+    "id": "L-28",
+    "code": "Lote 28",
     "areaM2": 0,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -125,8 +100,8 @@
     ]
   },
   {
-    "id": "L-06",
-    "code": "Lote 6",
+    "id": "L-27",
+    "code": "Lote 27",
     "areaM2": 0,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -150,8 +125,8 @@
     ]
   },
   {
-    "id": "L-07",
-    "code": "Lote 7",
+    "id": "L-26",
+    "code": "Lote 26",
     "areaM2": 0,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -175,8 +150,8 @@
     ]
   },
   {
-    "id": "L-08",
-    "code": "Lote 8",
+    "id": "L-25",
+    "code": "Lote 25",
     "areaM2": 0,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -200,8 +175,8 @@
     ]
   },
   {
-    "id": "L-09",
-    "code": "Lote 9",
+    "id": "L-24",
+    "code": "Lote 24",
     "areaM2": 0,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -225,8 +200,8 @@
     ]
   },
   {
-    "id": "L-10",
-    "code": "Lote 10",
+    "id": "L-23",
+    "code": "Lote 23",
     "areaM2": 0,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -250,8 +225,8 @@
     ]
   },
   {
-    "id": "L-11",
-    "code": "Lote 11",
+    "id": "L-22",
+    "code": "Lote 22",
     "areaM2": 0,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -275,8 +250,8 @@
     ]
   },
   {
-    "id": "L-12",
-    "code": "Lote 12",
+    "id": "L-21",
+    "code": "Lote 21",
     "areaM2": 0,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -300,8 +275,8 @@
     ]
   },
   {
-    "id": "L-13",
-    "code": "Lote 13",
+    "id": "L-20",
+    "code": "Lote 20",
     "areaM2": 0,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -325,8 +300,8 @@
     ]
   },
   {
-    "id": "L-14",
-    "code": "Lote 14",
+    "id": "L-19",
+    "code": "Lote 19",
     "areaM2": 0,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -350,8 +325,8 @@
     ]
   },
   {
-    "id": "L-15",
-    "code": "Lote 15",
+    "id": "L-18",
+    "code": "Lote 18",
     "areaM2": 0,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -375,8 +350,8 @@
     ]
   },
   {
-    "id": "L-16",
-    "code": "Lote 16",
+    "id": "L-17",
+    "code": "Lote 17",
     "areaM2": 0,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -400,8 +375,8 @@
     ]
   },
   {
-    "id": "L-17",
-    "code": "Lote 17",
+    "id": "L-16",
+    "code": "Lote 16",
     "areaM2": 0,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -425,8 +400,8 @@
     ]
   },
   {
-    "id": "L-18",
-    "code": "Lote 18",
+    "id": "L-15",
+    "code": "Lote 15",
     "areaM2": 0,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -450,8 +425,8 @@
     ]
   },
   {
-    "id": "L-19",
-    "code": "Lote 19",
+    "id": "L-14",
+    "code": "Lote 14",
     "areaM2": 0,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -475,8 +450,8 @@
     ]
   },
   {
-    "id": "L-20",
-    "code": "Lote 20",
+    "id": "L-13",
+    "code": "Lote 13",
     "areaM2": 0,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -500,8 +475,8 @@
     ]
   },
   {
-    "id": "L-21",
-    "code": "Lote 21",
+    "id": "L-12",
+    "code": "Lote 12",
     "areaM2": 0,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -525,8 +500,8 @@
     ]
   },
   {
-    "id": "L-22",
-    "code": "Lote 22",
+    "id": "L-11",
+    "code": "Lote 11",
     "areaM2": 0,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -550,8 +525,8 @@
     ]
   },
   {
-    "id": "L-23",
-    "code": "Lote 23",
+    "id": "L-10",
+    "code": "Lote 10",
     "areaM2": 0,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -575,8 +550,8 @@
     ]
   },
   {
-    "id": "L-24",
-    "code": "Lote 24",
+    "id": "L-09",
+    "code": "Lote 09",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -600,8 +575,8 @@
     ]
   },
   {
-    "id": "L-25",
-    "code": "Lote 25",
+    "id": "L-08",
+    "code": "Lote 08",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -625,8 +600,8 @@
     ]
   },
   {
-    "id": "L-26",
-    "code": "Lote 26",
+    "id": "L-07",
+    "code": "Lote 07",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -650,8 +625,8 @@
     ]
   },
   {
-    "id": "L-27",
-    "code": "Lote 27",
+    "id": "L-06",
+    "code": "Lote 06",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -675,8 +650,8 @@
     ]
   },
   {
-    "id": "L-28",
-    "code": "Lote 28",
+    "id": "L-05",
+    "code": "Lote 05",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -700,8 +675,8 @@
     ]
   },
   {
-    "id": "L-29",
-    "code": "Lote 29",
+    "id": "L-04",
+    "code": "Lote 04",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -725,8 +700,8 @@
     ]
   },
   {
-    "id": "L-30",
-    "code": "Lote 30",
+    "id": "L-03",
+    "code": "Lote 03",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -750,8 +725,8 @@
     ]
   },
   {
-    "id": "L-31",
-    "code": "Lote 31",
+    "id": "L-02",
+    "code": "Lote 02",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -775,8 +750,8 @@
     ]
   },
   {
-    "id": "L-32",
-    "code": "Lote 32",
+    "id": "L-01",
+    "code": "Lote 01",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -800,58 +775,8 @@
     ]
   },
   {
-    "id": "L-33",
-    "code": "Lote 33",
-    "areaM2": 1250,
-    "priceUsd": 0,
-    "status": "AVAILABLE",
-    "polygon": [
-      [
-        2249,
-        127
-      ],
-      [
-        2245,
-        218
-      ],
-      [
-        2019,
-        211
-      ],
-      [
-        2021,
-        114
-      ]
-    ]
-  },
-  {
-    "id": "L-34",
-    "code": "Lote 34",
-    "areaM2": 1250,
-    "priceUsd": 0,
-    "status": "AVAILABLE",
-    "polygon": [
-      [
-        1361,
-        4147
-      ],
-      [
-        1353,
-        4247
-      ],
-      [
-        1116,
-        4207
-      ],
-      [
-        1132,
-        4121
-      ]
-    ]
-  },
-  {
-    "id": "L-35",
-    "code": "Lote 35",
+    "id": "L-32",
+    "code": "Lote 32",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -875,8 +800,8 @@
     ]
   },
   {
-    "id": "L-36",
-    "code": "Lote 36",
+    "id": "L-33",
+    "code": "Lote 33",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -904,8 +829,8 @@
     ]
   },
   {
-    "id": "L-37",
-    "code": "Lote 37",
+    "id": "L-34",
+    "code": "Lote 34",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -929,8 +854,8 @@
     ]
   },
   {
-    "id": "L-38",
-    "code": "Lote 38",
+    "id": "L-35",
+    "code": "Lote 35",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -954,8 +879,8 @@
     ]
   },
   {
-    "id": "L-39",
-    "code": "Lote 39",
+    "id": "L-36",
+    "code": "Lote 36",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -979,8 +904,8 @@
     ]
   },
   {
-    "id": "L-40",
-    "code": "Lote 40",
+    "id": "L-37",
+    "code": "Lote 37",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1004,8 +929,8 @@
     ]
   },
   {
-    "id": "L-41",
-    "code": "Lote 41",
+    "id": "L-38",
+    "code": "Lote 38",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1029,8 +954,8 @@
     ]
   },
   {
-    "id": "L-42",
-    "code": "Lote 42",
+    "id": "L-39",
+    "code": "Lote 39",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1054,8 +979,8 @@
     ]
   },
   {
-    "id": "L-43",
-    "code": "Lote 43",
+    "id": "L-40",
+    "code": "Lote 40",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1079,8 +1004,8 @@
     ]
   },
   {
-    "id": "L-44",
-    "code": "Lote 44",
+    "id": "L-41",
+    "code": "Lote 41",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1104,8 +1029,8 @@
     ]
   },
   {
-    "id": "L-45",
-    "code": "Lote 45",
+    "id": "L-42",
+    "code": "Lote 42",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1129,8 +1054,8 @@
     ]
   },
   {
-    "id": "L-46",
-    "code": "Lote 46",
+    "id": "L-43",
+    "code": "Lote 43",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1154,8 +1079,8 @@
     ]
   },
   {
-    "id": "L-47",
-    "code": "Lote 47",
+    "id": "L-44",
+    "code": "Lote 44",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1179,8 +1104,8 @@
     ]
   },
   {
-    "id": "L-48",
-    "code": "Lote 48",
+    "id": "L-45",
+    "code": "Lote 45",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1204,8 +1129,8 @@
     ]
   },
   {
-    "id": "L-49",
-    "code": "Lote 49",
+    "id": "L-46",
+    "code": "Lote 46",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1229,33 +1154,8 @@
     ]
   },
   {
-    "id": "L-50",
-    "code": "Lote 50",
-    "areaM2": 1250,
-    "priceUsd": 0,
-    "status": "AVAILABLE",
-    "polygon": [
-      [
-        1635,
-        2099
-      ],
-      [
-        1616,
-        2211
-      ],
-      [
-        1408,
-        2187
-      ],
-      [
-        1418,
-        2075
-      ]
-    ]
-  },
-  {
-    "id": "L-51",
-    "code": "Lote 51",
+    "id": "L-47",
+    "code": "Lote 47",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1279,8 +1179,8 @@
     ]
   },
   {
-    "id": "L-52",
-    "code": "Lote 52",
+    "id": "L-48",
+    "code": "Lote 48",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1304,8 +1204,8 @@
     ]
   },
   {
-    "id": "L-53",
-    "code": "Lote 53",
+    "id": "L-49",
+    "code": "Lote 49",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1329,8 +1229,8 @@
     ]
   },
   {
-    "id": "L-54",
-    "code": "Lote 54",
+    "id": "L-50",
+    "code": "Lote 50",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1354,8 +1254,8 @@
     ]
   },
   {
-    "id": "L-55",
-    "code": "Lote 55",
+    "id": "L-51",
+    "code": "Lote 51",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1379,8 +1279,8 @@
     ]
   },
   {
-    "id": "L-56",
-    "code": "Lote 56",
+    "id": "L-52",
+    "code": "Lote 52",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1404,8 +1304,8 @@
     ]
   },
   {
-    "id": "L-57",
-    "code": "Lote 57",
+    "id": "L-53",
+    "code": "Lote 53",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1429,8 +1329,8 @@
     ]
   },
   {
-    "id": "L-58",
-    "code": "Lote 58",
+    "id": "L-54",
+    "code": "Lote 54",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1454,8 +1354,8 @@
     ]
   },
   {
-    "id": "L-59",
-    "code": "Lote 59",
+    "id": "L-55",
+    "code": "Lote 55",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1479,8 +1379,8 @@
     ]
   },
   {
-    "id": "L-60",
-    "code": "Lote 60",
+    "id": "L-56",
+    "code": "Lote 56",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1504,8 +1404,8 @@
     ]
   },
   {
-    "id": "L-61",
-    "code": "Lote 61",
+    "id": "L-57",
+    "code": "Lote 57",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1529,8 +1429,8 @@
     ]
   },
   {
-    "id": "L-62",
-    "code": "Lote 62",
+    "id": "L-58",
+    "code": "Lote 58",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1554,8 +1454,8 @@
     ]
   },
   {
-    "id": "L-63",
-    "code": "Lote 63",
+    "id": "L-59",
+    "code": "Lote 59",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1579,8 +1479,8 @@
     ]
   },
   {
-    "id": "L-64",
-    "code": "Lote 64",
+    "id": "L-60",
+    "code": "Lote 60",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1604,8 +1504,8 @@
     ]
   },
   {
-    "id": "L-65",
-    "code": "Lote 65",
+    "id": "L-61",
+    "code": "Lote 61",
     "areaM2": 1250,
     "priceUsd": 0,
     "status": "AVAILABLE",
@@ -1625,31 +1525,6 @@
       [
         1647,
         228
-      ]
-    ]
-  },
-  {
-    "id": "L-66",
-    "code": "Lote 66",
-    "areaM2": 1250,
-    "priceUsd": 0,
-    "status": "AVAILABLE",
-    "polygon": [
-      [
-        1889,
-        99
-      ],
-      [
-        1871,
-        227
-      ],
-      [
-        1650,
-        211
-      ],
-      [
-        1662,
-        68
       ]
     ]
   }
