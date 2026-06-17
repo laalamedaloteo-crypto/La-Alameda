@@ -10,7 +10,7 @@ export interface Lot {
   code: string;
   areaM2: number;
   priceUsd?: number;
-  status: LotStatus;
+  status?: LotStatus | null;
   description?: string;
   polygon?: Array<[number, number]>;
 }

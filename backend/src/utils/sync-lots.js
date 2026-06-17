@@ -42,9 +42,9 @@ async function syncLots() {
                 where: { id: lot.id },
                 defaults: {
                     code: lot.code,
-                    areaM2: lot.areaM2 || 1250,
-                    priceUsd: lot.priceUsd || 0,
-                    status: lot.status || 'AVAILABLE',
+                    areaM2: lot.areaM2 ?? 1250,
+                    priceUsd: lot.priceUsd ?? 0,
+                    status: lot.status ?? null,
                     polygon: lot.polygon || [],
                     description: lot.description || '',
                     extraData: lot.extraData || {}
@@ -54,16 +54,19 @@ async function syncLots() {
             if (created) {
                 console.log(`➕ Lote creado: ${lot.id}`);
             } else {
-                // Si ya existe, SOLO actualizamos el polígono y el código (si cambió)
-                // NO tocamos ni precio ni área ni estado ni descripción (lo maneja el admin)
+                // Si ya existe, SOLO actualizamos el polígono, el código y las áreas sin estado.
+                // NO tocamos ni precio ni área ni estado ni descripción de lotes comerciales (lo maneja el admin).
                 const needsUpdate = JSON.stringify(existingLot.polygon) !== JSON.stringify(lot.polygon) || 
-                                    existingLot.code !== lot.code;
+                                    existingLot.code !== lot.code ||
+                                    (!lot.status && existingLot.status !== null);
 
                 if (needsUpdate) {
-                    await existingLot.update({
+                    const updateData = {
                         code: lot.code,
                         polygon: lot.polygon || []
-                    });
+                    };
+                    if (!lot.status) updateData.status = null;
+                    await existingLot.update(updateData);
                     console.log(`🔄 Polígono actualizado para lote: ${lot.id}`);
                 }
             }

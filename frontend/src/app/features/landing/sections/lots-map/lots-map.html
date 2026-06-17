@@ -49,7 +49,9 @@
             </div>
         </div>
 
+        @if (lot.status) {
         <ui-badge [status]="lot.status"></ui-badge>
+        }
     </div>
 
     @if (lot.description) {

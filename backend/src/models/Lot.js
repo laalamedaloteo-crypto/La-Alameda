@@ -21,7 +21,8 @@ const Lot = sequelize.define('Lot', {
     },
     status: {
         type: DataTypes.ENUM('AVAILABLE', 'RESERVED', 'SOLD'),
-        defaultValue: 'AVAILABLE'
+        allowNull: true,
+        defaultValue: null
     },
     polygon: {
         type: DataTypes.JSONB,
