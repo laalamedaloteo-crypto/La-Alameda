@@ -9,6 +9,10 @@ import { LotsMap } from '../lots-map/lots-map';
 type Tab = 'list' | 'map';
 type Filter = 'ALL' | LotStatus;
 
+function isClientLot(lot: Lot): lot is Lot & { status: LotStatus } {
+    return lot.status === 'AVAILABLE' || lot.status === 'RESERVED' || lot.status === 'SOLD';
+}
+
 @Component({
     selector: 'landing-lots-section',
     standalone: true,
@@ -30,12 +34,17 @@ export class LotsSection {
     filteredLots = computed(() => {
         const f = this.filter();
         const q = this.query().trim().toLowerCase();
-        let arr = this.lots();
+        let arr = this.lots().filter(isClientLot);
 
         if (f !== 'ALL') arr = arr.filter((l) => l.status === f);
         if (q) arr = arr.filter((l) => l.code.toLowerCase().includes(q));
 
         return [...arr].sort((a, b) => a.code.localeCompare(b.code, undefined, { numeric: true }));
+    });
+
+    mapLots = computed(() => {
+        const visibleClientLots = new Set(this.filteredLots().map((l) => l.id));
+        return this.lots().filter((lot) => !isClientLot(lot) || visibleClientLots.has(lot.id));
     });
 
     constructor(private api: LotsApiService) {

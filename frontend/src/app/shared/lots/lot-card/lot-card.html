@@ -1,7 +1,9 @@
 <article class="card" [class.active]="active" (click)="onClick()">
     <div class="top">
         <div class="code">{{ lot.code }}</div>
+        @if (lot.status) {
         <ui-badge [status]="lot.status"></ui-badge>
+        }
     </div>
 
     <div class="details">

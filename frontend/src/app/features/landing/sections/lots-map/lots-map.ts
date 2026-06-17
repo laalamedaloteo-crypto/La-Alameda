@@ -19,6 +19,11 @@ import { UiBadge } from '../../../../shared/ui/badge/badge';
 import { UiButton } from '../../../../shared/ui/button/button';
 
 type LotLayer = L.Polygon & { __lotId?: string };
+type ClientLot = Lot & { status: NonNullable<Lot['status']> };
+
+function isClientLot(lot: Lot): lot is ClientLot {
+  return lot.status === 'AVAILABLE' || lot.status === 'RESERVED' || lot.status === 'SOLD';
+}
 
 @Component({
   selector: 'landing-lots-map',
@@ -208,6 +213,7 @@ export class LotsMap implements OnChanges, OnDestroy {
           const id = layer!.__lotId!;
           const currentLot = this.lotById.get(id);
           if (!currentLot) return;
+          if (!isClientLot(currentLot)) return;
 
           this.selectLot.emit(currentLot);
           this.openLot.set(currentLot);
@@ -215,7 +221,7 @@ export class LotsMap implements OnChanges, OnDestroy {
           this.focusLot(id);
         });
 
-        layer.bindTooltip(`${lot.code} • ${this.statusLabel(lot.status)}`, { sticky: true });
+        layer.bindTooltip(isClientLot(lot) ? `${lot.code} • ${this.statusLabel(lot.status)}` : lot.code, { sticky: true });
 
         this.layerById.set(lot.id, layer);
       } else {
@@ -229,7 +235,6 @@ export class LotsMap implements OnChanges, OnDestroy {
 
       // Añadimos el layer visible
       this.drawnGroup.addLayer(layer);
-
       // estilos por estado + seleccionado
       this.applyLotStyle(layer, lot, lot.id === this.selected?.id);
     }
@@ -270,6 +275,7 @@ export class LotsMap implements OnChanges, OnDestroy {
     // ✅ clases para glow por status (actualiza si cambia status)
     const el = (layer as any).getElement?.() as SVGElement | undefined;
     if (el) {
+      el.classList.toggle('lot-non-client', !isClientLot(lot));
       el.classList.toggle('lot-available', lot.status === 'AVAILABLE');
       el.classList.toggle('lot-reserved', lot.status === 'RESERVED');
       el.classList.toggle('lot-sold', lot.status === 'SOLD');
@@ -282,29 +288,29 @@ export class LotsMap implements OnChanges, OnDestroy {
       case 'AVAILABLE':
         return {
           stroke: 'rgba(46, 204, 113, 0.50)',   // verde visible
-          fill: 'rgba(46, 204, 113, 0.25)',
-          fillOpacity: 0.60,
+          fill: 'rgba(46, 150, 78, 0.48)',
+          fillOpacity: 0.52,
           dashArray: undefined,
         };
       case 'RESERVED':
         return {
           stroke: 'rgba(241, 196, 15, 0.50)',   // ámbar
-          fill: 'rgba(241, 196, 15, 0.20)',
-          fillOpacity: 0.90,
+          fill: 'rgba(206, 174, 54, 0.54)',
+          fillOpacity: 0.58,
           dashArray: '10 6',                    // dashed
         };
       case 'SOLD':
         return {
           stroke: 'rgba(231, 76, 60, 0.50)',    // rojo
-          fill: 'rgba(231, 76, 60, 0.15)',
-          fillOpacity: 0.90,
+          fill: 'rgba(174, 67, 55, 0.52)',
+          fillOpacity: 0.56,
           dashArray: '3 8',                     // dotted-ish
         };
       default:
         return {
-          stroke: 'rgba(200, 180, 138, 0.40)',
-          fill: 'rgba(200, 180, 138, 0.15)',
-          fillOpacity: 0.15,
+          stroke: 'rgba(14, 54, 24, 0.72)',
+          fill: 'rgba(12, 67, 28, 0.78)',
+          fillOpacity: 0.82,
           dashArray: undefined,
         };
     }
@@ -391,6 +397,7 @@ export class LotsMap implements OnChanges, OnDestroy {
         const id = layer.__lotId!;
         const currentLot = this.lotById.get(id);
         if (!currentLot) return;
+        if (!isClientLot(currentLot)) return;
 
         this.selectLot.emit(currentLot);
         this.openLot.set(currentLot);
@@ -400,10 +407,12 @@ export class LotsMap implements OnChanges, OnDestroy {
 
       const lot = this.lotById.get(lotId);
       if (lot) {
-        layer.bindTooltip(`${lot.code} • ${this.statusLabel(lot.status)}`, { sticky: true });
         this.applyLotStyle(layer, lot, true);
-        this.selectLot.emit(lot);
-        this.focusLot(lotId);
+        layer.bindTooltip(isClientLot(lot) ? `${lot.code} • ${this.statusLabel(lot.status)}` : lot.code, { sticky: true });
+        if (isClientLot(lot)) {
+          this.selectLot.emit(lot);
+          this.focusLot(lotId);
+        }
       }
     });
 
@@ -466,7 +475,7 @@ export class LotsMap implements OnChanges, OnDestroy {
       case 'AVAILABLE': return 'Disponible';
       case 'RESERVED': return 'Reservado';
       case 'SOLD': return 'Vendido';
-      default: return s;
+      default: return '';
     }
   }
 

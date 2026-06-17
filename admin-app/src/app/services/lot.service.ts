@@ -2,15 +2,26 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+export type LotStatus = 'AVAILABLE' | 'RESERVED' | 'SOLD';
 
 export interface Lot {
     id: string;
     code: string;
     areaM2: number;
     priceUsd: number;
-    status: 'AVAILABLE' | 'RESERVED' | 'SOLD';
+    status: LotStatus;
     description?: string;
     polygon?: any;
+}
+
+interface ApiLot extends Omit<Lot, 'status'> {
+    status?: LotStatus | null;
+}
+
+function isClientLot(lot: ApiLot): lot is Lot {
+    return lot.status === 'AVAILABLE' || lot.status === 'RESERVED' || lot.status === 'SOLD';
 }
 
 @Injectable({
@@ -28,11 +39,20 @@ export class LotService {
     }
 
     getLots(): Observable<Lot[]> {
-        return this.http.get<Lot[]>(this.apiUrl);
+        return this.http.get<ApiLot[]>(this.apiUrl).pipe(
+            map((lots) => lots.filter(isClientLot))
+        );
     }
 
     getLotById(id: string): Observable<Lot> {
-        return this.http.get<Lot>(`${this.apiUrl}/${id}`);
+        return this.http.get<ApiLot>(`${this.apiUrl}/${id}`).pipe(
+            map((lot) => {
+                if (!isClientLot(lot)) {
+                    throw new Error('El registro no es un lote administrable.');
+                }
+                return lot;
+            })
+        );
     }
 
     updateLot(id: string, data: Partial<Lot>): Observable<Lot> {
